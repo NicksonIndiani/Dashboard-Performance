@@ -1,5 +1,3 @@
-# dashboard_roas_streamlit.py
-
 import streamlit as st
 import pandas as pd
 import seaborn as sns
@@ -10,7 +8,6 @@ st.set_page_config(page_title="Dashboard de ROAS", layout="wide")
 
 st.title("Análise de ROAS por Coorte")
 
-# Upload dos arquivos CSV
 st.sidebar.header("📁 Upload dos Arquivos")
 roas_file = st.sidebar.file_uploader("Envie o arquivo ROAS", type=["csv"])
 preditivo_file = st.sidebar.file_uploader("Envie o arquivo Preditivo", type=["csv"])
@@ -19,19 +16,18 @@ if roas_file and preditivo_file:
     df_roas = pd.read_csv(roas_file)
     df_preditivo = pd.read_csv(preditivo_file)
 
-    # Aplica tratamento e origem
     df_roas['Origem'] = 'ROAS'
     df_preditivo['Origem'] = 'Preditivo'
     df_unificado = pd.concat([df_roas, df_preditivo], ignore_index=True)
 
-    # Função para preparar os dados
     def preparar_dataframe(df):
         semana_cols = [col for col in df.columns if 'Semana' in col]
         df.columns = [col.replace('Semana ', 'S') if 'Semana' in col else col for col in df.columns]
         semana_cols = [col.replace('Semana ', 'S') for col in semana_cols]
         df[semana_cols] = df[semana_cols].replace(',', '.', regex=True).apply(pd.to_numeric, errors='coerce')
-        df['Custo'] = df['Custo'].replace({'R\$': '', '\.': '', ',': '.'}, regex=True).astype(float)
-        df['Receita'] = df['Receita'].replace({'R\$': '', '\.': '', ',': '.'}, regex=True).astype(float)
+        df['Custo'] = df['Custo'].replace({r'R\$': '', r'\.': '', ',': '.'}, regex=True).astype(float)
+        df['Receita'] = df['Receita'].replace({r'R\$': '', r'\.': '', ',': '.'}, regex=True).astype(float)
+
         df['Data Início'] = pd.to_datetime(df['Periodo ( 7 dias)'].str.extract(r'(\d{2}/\d{2}/\d{4})')[0], dayfirst=True)
         def classificar_fase(data):
             mes = data.month
@@ -48,7 +44,6 @@ if roas_file and preditivo_file:
 
     df_unificado['ROAS'] = df_unificado['Receita'] / df_unificado['Custo']
 
-    # Filtro de período
     st.sidebar.header("📅 Filtro de Data")
     data_min = df_unificado['Data Início'].min()
     data_max = df_unificado['Data Início'].max()
@@ -58,7 +53,6 @@ if roas_file and preditivo_file:
         df_unificado = df_unificado[(df_unificado['Data Início'] >= pd.to_datetime(data_range[0])) &
                                      (df_unificado['Data Início'] <= pd.to_datetime(data_range[1]))]
 
-    # Simulação ao vivo de ROAS mínimo ideal
     st.sidebar.header("🎯 Simulação Ao Vivo")
     semanas_restantes = st.sidebar.slider("Semanas Restantes até 11", min_value=1, max_value=11, value=6)
     fase_simulada = st.sidebar.selectbox("Fase da simulação", ['Alta', 'Queda'])
@@ -213,11 +207,9 @@ if roas_file and preditivo_file:
         if len(crescimentos_reais) < 1:
             return valores[-1]
 
-        # Usa apenas os 2 últimos crescimentos reais
         ultimos = crescimentos_reais[-2:]
         media_final = np.mean(ultimos)
 
-        # Se crescimento foi negativo ou estagnado, não projeta para cima
         if media_final <= 0:
             return valores[-1]
 

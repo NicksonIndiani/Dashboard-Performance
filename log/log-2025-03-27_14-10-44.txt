@@ -1,0 +1,946 @@
+time="2025-03-27T14:10:44-03:00" level=warning msg="/home/nickson/Dashboard-Performance/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+Compose can now delegate builds to bake for better performance.
+ To do so, set COMPOSE_BAKE=true.
+#0 building with "default" instance using docker driver
+
+#1 [analise-roas internal] load build definition from Dockerfile
+#1 transferring dockerfile: 600B done
+#1 DONE 0.0s
+
+#2 [analise-roas internal] load metadata for docker.io/library/python:3.12-slim
+#2 DONE 1.2s
+
+#3 [analise-roas internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [analise-roas 1/6] FROM docker.io/library/python:3.12-slim@sha256:a866731a6b71c4a194a845d86e06568725e430ed21821d0c52e4efb385cf6c6f
+#4 DONE 0.0s
+
+#5 [analise-roas internal] load build context
+#5 transferring context: 10.90kB done
+#5 DONE 0.0s
+
+#6 [analise-roas 2/6] RUN apt-get update && apt-get install -y     build-essential     libglib2.0-0     libsm6     libxext6     libxrender-dev     libfontconfig1     && rm -rf /var/lib/apt/lists/*
+#6 CACHED
+
+#7 [analise-roas 3/6] WORKDIR /app
+#7 CACHED
+
+#8 [analise-roas 4/6] COPY requirements.txt .
+#8 DONE 0.0s
+
+#9 [analise-roas 5/6] RUN pip install --upgrade pip && pip install -r requirements.txt
+#9 1.303 Requirement already satisfied: pip in /usr/local/lib/python3.12/site-packages (24.3.1)
+#9 1.402 Collecting pip
+#9 1.468   Downloading pip-25.0.1-py3-none-any.whl.metadata (3.7 kB)
+#9 1.489 Downloading pip-25.0.1-py3-none-any.whl (1.8 MB)
+#9 1.613    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 18.5 MB/s eta 0:00:00
+#9 1.622 Installing collected packages: pip
+#9 1.622   Attempting uninstall: pip
+#9 1.623     Found existing installation: pip 24.3.1
+#9 1.640     Uninstalling pip-24.3.1:
+#9 1.712       Successfully uninstalled pip-24.3.1
+#9 2.198 Successfully installed pip-25.0.1
+#9 2.198 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable.It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#9 2.688 Collecting streamlit==1.32.0 (from -r requirements.txt (line 1))
+#9 2.742   Downloading streamlit-1.32.0-py2.py3-none-any.whl.metadata (8.5 kB)
+#9 2.825 Collecting pandas (from -r requirements.txt (line 2))
+#9 2.838   Downloading pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (89 kB)
+#9 2.926 Collecting seaborn (from -r requirements.txt (line 3))
+#9 2.941   Downloading seaborn-0.13.2-py3-none-any.whl.metadata (5.4 kB)
+#9 3.064 Collecting numpy (from -r requirements.txt (line 4))
+#9 3.073   Downloading numpy-2.2.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (62 kB)
+#9 3.167 Collecting matplotlib (from -r requirements.txt (line 5))
+#9 3.175   Downloading matplotlib-3.10.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (11 kB)
+#9 3.218 Collecting plotly (from -r requirements.txt (line 6))
+#9 3.229   Downloading plotly-6.0.1-py3-none-any.whl.metadata (6.7 kB)
+#9 3.281 Collecting altair<6,>=4.0 (from streamlit==1.32.0->-r requirements.txt (line 1))
+#9 3.295   Downloading altair-5.5.0-py3-none-any.whl.metadata (11 kB)
+#9 3.326 Collecting blinker<2,>=1.0.0 (from streamlit==1.32.0->-r requirements.txt (line 1))
+#9 3.343   Downloading blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+#9 3.372 Collecting cachetools<6,>=4.0 (from streamlit==1.32.0->-r requirements.txt (line 1))
+#9 3.383   Downloading cachetools-5.5.2-py3-none-any.whl.metadata (5.4 kB)
+#9 3.418 Collecting click<9,>=7.0 (from streamlit==1.32.0->-r requirements.txt (line 1))
+#9 3.426   Downloading click-8.1.8-py3-none-any.whl.metadata (2.3 kB)
+#9 3.437 Collecting numpy (from -r requirements.txt (line 4))
+#9 3.447   Downloading numpy-1.26.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (61 kB)
+#9 3.504 Collecting packaging<24,>=16.8 (from streamlit==1.32.0->-r requirements.txt (line 1))
+#9 3.514   Downloading packaging-23.2-py3-none-any.whl.metadata (3.2 kB)
+#9 3.705 Collecting pillow<11,>=7.1.0 (from streamlit==1.32.0->-r requirements.txt (line 1))
+#9 3.720   Downloading pillow-10.4.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (9.2 kB)
+#9 3.834 Collecting protobuf<5,>=3.20 (from streamlit==1.32.0->-r requirements.txt (line 1))
+#9 3.843   Downloading protobuf-4.25.6-cp37-abi3-manylinux2014_x86_64.whl.metadata (541 bytes)
+#9 4.037 Collecting pyarrow>=7.0 (from streamlit==1.32.0->-r requirements.txt (line 1))
+#9 4.044   Downloading pyarrow-19.0.1-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (3.3 kB)
+#9 4.089 Collecting requests<3,>=2.27 (from streamlit==1.32.0->-r requirements.txt (line 1))
+#9 4.100   Downloading requests-2.32.3-py3-none-any.whl.metadata (4.6 kB)
+#9 4.157 Collecting rich<14,>=10.14.0 (from streamlit==1.32.0->-r requirements.txt (line 1))
+#9 4.170   Downloading rich-13.9.4-py3-none-any.whl.metadata (18 kB)
+#9 4.212 Collecting tenacity<9,>=8.1.0 (from streamlit==1.32.0->-r requirements.txt (line 1))
+#9 4.232   Downloading tenacity-8.5.0-py3-none-any.whl.metadata (1.2 kB)
+#9 4.260 Collecting toml<2,>=0.10.1 (from streamlit==1.32.0->-r requirements.txt (line 1))
+#9 4.270   Downloading toml-0.10.2-py2.py3-none-any.whl.metadata (7.1 kB)
+#9 4.309 Collecting typing-extensions<5,>=4.3.0 (from streamlit==1.32.0->-r requirements.txt (line 1))
+#9 4.319   Downloading typing_extensions-4.13.0-py3-none-any.whl.metadata (3.0 kB)
+#9 4.361 Collecting gitpython!=3.1.19,<4,>=3.0.7 (from streamlit==1.32.0->-r requirements.txt (line 1))
+#9 4.372   Downloading GitPython-3.1.44-py3-none-any.whl.metadata (13 kB)
+#9 4.412 Collecting pydeck<1,>=0.8.0b4 (from streamlit==1.32.0->-r requirements.txt (line 1))
+#9 4.431   Downloading pydeck-0.9.1-py2.py3-none-any.whl.metadata (4.1 kB)
+#9 4.478 Collecting tornado<7,>=6.0.3 (from streamlit==1.32.0->-r requirements.txt (line 1))
+#9 4.487   Downloading tornado-6.4.2-cp38-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.5 kB)
+#9 4.534 Collecting watchdog>=2.1.5 (from streamlit==1.32.0->-r requirements.txt (line 1))
+#9 4.544   Downloading watchdog-6.0.0-py3-none-manylinux2014_x86_64.whl.metadata (44 kB)
+#9 4.587 Collecting python-dateutil>=2.8.2 (from pandas->-r requirements.txt (line 2))
+#9 4.599   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+#9 4.640 Collecting pytz>=2020.1 (from pandas->-r requirements.txt (line 2))
+#9 4.652   Downloading pytz-2025.2-py2.py3-none-any.whl.metadata (22 kB)
+#9 4.683 Collecting tzdata>=2022.7 (from pandas->-r requirements.txt (line 2))
+#9 4.703   Downloading tzdata-2025.2-py2.py3-none-any.whl.metadata (1.4 kB)
+#9 4.770 Collecting contourpy>=1.0.1 (from matplotlib->-r requirements.txt (line 5))
+#9 4.782   Downloading contourpy-1.3.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.4 kB)
+#9 4.818 Collecting cycler>=0.10 (from matplotlib->-r requirements.txt (line 5))
+#9 4.830   Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+#9 4.908 Collecting fonttools>=4.22.0 (from matplotlib->-r requirements.txt (line 5))
+#9 4.918   Downloading fonttools-4.56.0-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (101 kB)
+#9 4.991 Collecting kiwisolver>=1.3.1 (from matplotlib->-r requirements.txt (line 5))
+#9 4.998   Downloading kiwisolver-1.4.8-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.2 kB)
+#9 5.043 Collecting pyparsing>=2.3.1 (from matplotlib->-r requirements.txt (line 5))
+#9 5.051   Downloading pyparsing-3.2.3-py3-none-any.whl.metadata (5.0 kB)
+#9 5.099 Collecting narwhals>=1.15.1 (from plotly->-r requirements.txt (line 6))
+#9 5.114   Downloading narwhals-1.32.0-py3-none-any.whl.metadata (9.2 kB)
+#9 5.156 Collecting jinja2 (from altair<6,>=4.0->streamlit==1.32.0->-r requirements.txt (line 1))
+#9 5.165   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+#9 5.196 Collecting jsonschema>=3.0 (from altair<6,>=4.0->streamlit==1.32.0->-r requirements.txt (line 1))
+#9 5.205   Downloading jsonschema-4.23.0-py3-none-any.whl.metadata (7.9 kB)
+#9 5.264 Collecting gitdb<5,>=4.0.1 (from gitpython!=3.1.19,<4,>=3.0.7->streamlit==1.32.0->-r requirements.txt (line 1))
+#9 5.275   Downloading gitdb-4.0.12-py3-none-any.whl.metadata (1.2 kB)
+#9 5.326 Collecting six>=1.5 (from python-dateutil>=2.8.2->pandas->-r requirements.txt (line 2))
+#9 5.352   Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+#9 5.405 Collecting charset-normalizer<4,>=2 (from requests<3,>=2.27->streamlit==1.32.0->-r requirements.txt (line 1))
+#9 5.473   Downloading charset_normalizer-3.4.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (35 kB)
+#9 5.511 Collecting idna<4,>=2.5 (from requests<3,>=2.27->streamlit==1.32.0->-r requirements.txt (line 1))
+#9 5.530   Downloading idna-3.10-py3-none-any.whl.metadata (10 kB)
+#9 5.578 Collecting urllib3<3,>=1.21.1 (from requests<3,>=2.27->streamlit==1.32.0->-r requirements.txt (line 1))
+#9 5.586   Downloading urllib3-2.3.0-py3-none-any.whl.metadata (6.5 kB)
+#9 5.692 Collecting certifi>=2017.4.17 (from requests<3,>=2.27->streamlit==1.32.0->-r requirements.txt (line 1))
+#9 5.731   Downloading certifi-2025.1.31-py3-none-any.whl.metadata (2.5 kB)
+#9 5.775 Collecting markdown-it-py>=2.2.0 (from rich<14,>=10.14.0->streamlit==1.32.0->-r requirements.txt (line 1))
+#9 5.787   Downloading markdown_it_py-3.0.0-py3-none-any.whl.metadata (6.9 kB)
+#9 5.818 Collecting pygments<3.0.0,>=2.13.0 (from rich<14,>=10.14.0->streamlit==1.32.0->-r requirements.txt (line 1))
+#9 5.834   Downloading pygments-2.19.1-py3-none-any.whl.metadata (2.5 kB)
+#9 5.875 Collecting smmap<6,>=3.0.1 (from gitdb<5,>=4.0.1->gitpython!=3.1.19,<4,>=3.0.7->streamlit==1.32.0->-r requirements.txt (line 1))
+#9 5.882   Downloading smmap-5.0.2-py3-none-any.whl.metadata (4.3 kB)
+#9 5.936 Collecting MarkupSafe>=2.0 (from jinja2->altair<6,>=4.0->streamlit==1.32.0->-r requirements.txt (line 1))
+#9 5.948   Downloading MarkupSafe-3.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.0 kB)
+#9 5.979 Collecting attrs>=22.2.0 (from jsonschema>=3.0->altair<6,>=4.0->streamlit==1.32.0->-r requirements.txt (line 1))
+#9 5.987   Downloading attrs-25.3.0-py3-none-any.whl.metadata (10 kB)
+#9 6.042 Collecting jsonschema-specifications>=2023.03.6 (from jsonschema>=3.0->altair<6,>=4.0->streamlit==1.32.0->-r requirements.txt (line 1))
+#9 6.064   Downloading jsonschema_specifications-2024.10.1-py3-none-any.whl.metadata (3.0 kB)
+#9 6.113 Collecting referencing>=0.28.4 (from jsonschema>=3.0->altair<6,>=4.0->streamlit==1.32.0->-r requirements.txt (line 1))
+#9 6.119   Downloading referencing-0.36.2-py3-none-any.whl.metadata (2.8 kB)
+#9 6.253 Collecting rpds-py>=0.7.1 (from jsonschema>=3.0->altair<6,>=4.0->streamlit==1.32.0->-r requirements.txt (line 1))
+#9 6.276   Downloading rpds_py-0.24.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+#9 6.313 Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich<14,>=10.14.0->streamlit==1.32.0->-r requirements.txt (line 1))
+#9 6.364   Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+#9 6.408 Downloading streamlit-1.32.0-py2.py3-none-any.whl (8.1 MB)
+#9 7.207    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.1/8.1 MB 10.2 MB/s eta 0:00:00
+#9 7.295 Downloading pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.7 MB)
+#9 8.677    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.7/12.7 MB 9.1 MB/s eta 0:00:00
+#9 8.695 Downloading seaborn-0.13.2-py3-none-any.whl (294 kB)
+#9 8.761 Downloading numpy-1.26.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (18.0 MB)
+#9 10.06    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 18.0/18.0 MB 13.9 MB/s eta 0:00:00
+#9 10.08 Downloading matplotlib-3.10.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (8.6 MB)
+#9 10.75    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.6/8.6 MB 12.6 MB/s eta 0:00:00
+#9 10.76 Downloading plotly-6.0.1-py3-none-any.whl (14.8 MB)
+#9 11.81    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.8/14.8 MB 14.5 MB/s eta 0:00:00
+#9 11.81 Downloading altair-5.5.0-py3-none-any.whl (731 kB)
+#9 11.86    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 731.2/731.2 kB 14.2 MB/s eta 0:00:00
+#9 11.87 Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+#9 11.92 Downloading cachetools-5.5.2-py3-none-any.whl (10 kB)
+#9 11.95 Downloading click-8.1.8-py3-none-any.whl (98 kB)
+#9 11.97 Downloading contourpy-1.3.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (323 kB)
+#9 12.01 Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+#9 12.18 Downloading fonttools-4.56.0-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.9 MB)
+#9 12.68    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.9/4.9 MB 9.7 MB/s eta 0:00:00
+#9 12.71 Downloading GitPython-3.1.44-py3-none-any.whl (207 kB)
+#9 12.75 Downloading kiwisolver-1.4.8-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.5 MB)
+#9 12.87    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 12.3 MB/s eta 0:00:00
+#9 12.89 Downloading narwhals-1.32.0-py3-none-any.whl (320 kB)
+#9 12.93 Downloading packaging-23.2-py3-none-any.whl (53 kB)
+#9 12.95 Downloading pillow-10.4.0-cp312-cp312-manylinux_2_28_x86_64.whl (4.5 MB)
+#9 13.27    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 13.7 MB/s eta 0:00:00
+#9 13.28 Downloading protobuf-4.25.6-cp37-abi3-manylinux2014_x86_64.whl (294 kB)
+#9 13.34 Downloading pyarrow-19.0.1-cp312-cp312-manylinux_2_28_x86_64.whl (42.1 MB)
+#9 17.99    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.1/42.1 MB 9.0 MB/s eta 0:00:00
+#9 18.02 Downloading pydeck-0.9.1-py2.py3-none-any.whl (6.9 MB)
+#9 19.24    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.9/6.9 MB 5.8 MB/s eta 0:00:00
+#9 19.26 Downloading pyparsing-3.2.3-py3-none-any.whl (111 kB)
+#9 19.34 Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+#9 19.38 Downloading pytz-2025.2-py2.py3-none-any.whl (509 kB)
+#9 19.48 Downloading requests-2.32.3-py3-none-any.whl (64 kB)
+#9 19.51 Downloading rich-13.9.4-py3-none-any.whl (242 kB)
+#9 19.55 Downloading tenacity-8.5.0-py3-none-any.whl (28 kB)
+#9 19.61 Downloading toml-0.10.2-py2.py3-none-any.whl (16 kB)
+#9 19.63 Downloading tornado-6.4.2-cp38-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (437 kB)
+#9 19.67 Downloading typing_extensions-4.13.0-py3-none-any.whl (45 kB)
+#9 19.69 Downloading tzdata-2025.2-py2.py3-none-any.whl (347 kB)
+#9 19.78 Downloading watchdog-6.0.0-py3-none-manylinux2014_x86_64.whl (79 kB)
+#9 19.81 Downloading certifi-2025.1.31-py3-none-any.whl (166 kB)
+#9 19.88 Downloading charset_normalizer-3.4.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (145 kB)
+#9 19.93 Downloading gitdb-4.0.12-py3-none-any.whl (62 kB)
+#9 19.96 Downloading idna-3.10-py3-none-any.whl (70 kB)
+#9 20.04 Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+#9 20.08 Downloading jsonschema-4.23.0-py3-none-any.whl (88 kB)
+#9 20.10 Downloading markdown_it_py-3.0.0-py3-none-any.whl (87 kB)
+#9 20.12 Downloading pygments-2.19.1-py3-none-any.whl (1.2 MB)
+#9 20.35    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 7.0 MB/s eta 0:00:00
+#9 20.37 Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+#9 20.39 Downloading urllib3-2.3.0-py3-none-any.whl (128 kB)
+#9 20.48 Downloading attrs-25.3.0-py3-none-any.whl (63 kB)
+#9 20.51 Downloading jsonschema_specifications-2024.10.1-py3-none-any.whl (18 kB)
+#9 20.52 Downloading MarkupSafe-3.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (23 kB)
+#9 20.54 Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+#9 20.55 Downloading referencing-0.36.2-py3-none-any.whl (26 kB)
+#9 20.62 Downloading rpds_py-0.24.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (393 kB)
+#9 20.67 Downloading smmap-5.0.2-py3-none-any.whl (24 kB)
+#9 20.94 Installing collected packages: pytz, watchdog, urllib3, tzdata, typing-extensions, tornado, toml, tenacity, smmap, six, rpds-py, pyparsing, pygments, pyarrow, protobuf, pillow, packaging, numpy, narwhals, mdurl, MarkupSafe, kiwisolver, idna, fonttools, cycler, click, charset-normalizer, certifi, cachetools, blinker, attrs, requests, referencing, python-dateutil, plotly, markdown-it-py, jinja2, gitdb, contourpy, rich, pydeck, pandas, matplotlib, jsonschema-specifications, gitpython, seaborn, jsonschema, altair, streamlit
+#9 34.36 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#9 34.36 Successfully installed MarkupSafe-3.0.2 altair-5.5.0 attrs-25.3.0 blinker-1.9.0 cachetools-5.5.2 certifi-2025.1.31 charset-normalizer-3.4.1 click-8.1.8 contourpy-1.3.1 cycler-0.12.1 fonttools-4.56.0 gitdb-4.0.12 gitpython-3.1.44 idna-3.10 jinja2-3.1.6 jsonschema-4.23.0 jsonschema-specifications-2024.10.1 kiwisolver-1.4.8 markdown-it-py-3.0.0 matplotlib-3.10.1 mdurl-0.1.2 narwhals-1.32.0 numpy-1.26.4 packaging-23.2 pandas-2.2.3 pillow-10.4.0 plotly-6.0.1 protobuf-4.25.6 pyarrow-19.0.1 pydeck-0.9.1 pygments-2.19.1 pyparsing-3.2.3 python-dateutil-2.9.0.post0 pytz-2025.2 referencing-0.36.2 requests-2.32.3 rich-13.9.4 rpds-py-0.24.0 seaborn-0.13.2 six-1.17.0 smmap-5.0.2 streamlit-1.32.0 tenacity-8.5.0 toml-0.10.2 tornado-6.4.2 typing-extensions-4.13.0 tzdata-2025.2 urllib3-2.3.0 watchdog-6.0.0
+#9 DONE 36.5s
+
+#10 [analise-roas 6/6] COPY app/ ./app/
+#10 DONE 0.0s
+
+#11 [analise-roas] exporting to image
+#11 exporting layers
+#11 exporting layers 3.0s done
+#11 writing image sha256:58683b4dd21396b9e6b33d9d7ca5f11375235a6727a7acebe1d71c0d7d920bb2 done
+#11 naming to docker.io/library/dashboard-performance-analise-roas done
+#11 DONE 3.1s
+
+#12 [analise-roas] resolving provenance for metadata file
+#12 DONE 0.0s
+ analise-roas  Built
+ Network dashboard-performance_default  Creating
+ Network dashboard-performance_default  Created
+ Container analise-roas  Creating
+ Container analise-roas  Created
+Attaching to analise-roas
+analise-roas  | 
+analise-roas  | Collecting usage statistics. To deactivate, set browser.gatherUsageStats to False.
+analise-roas  | 
+analise-roas  | 
+analise-roas  |   You can now view your Streamlit app in your browser.
+analise-roas  | 
+analise-roas  |   URL: http://0.0.0.0:8501
+analise-roas  | 
+analise-roas  | /app/app/main.py:84: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   crescimento_roas_pct = crescimento_roas_absoluto.pct_change().fillna(0)
+analise-roas  | /app/app/main.py:118: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   crescimento_percentual = crescimento_roas_absoluto.pct_change().fillna(0).values
+analise-roas  | /app/app/main.py:153: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  |   ax5.set_xticklabels(df_plot['Semana'], rotation=45)
+analise-roas  | /app/app/main.py:168: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  |   roas_por_faixa = df_unificado.groupby("Faixa de Investimento")["ROAS"].agg(['mean', 'count']).reset_index()
+analise-roas  | /app/app/main.py:172: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   sns.barplot(data=roas_por_faixa, x='Faixa de Investimento', y='mean', palette='Blues_d', ax=ax2)
+analise-roas  | /app/app/main.py:191: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   sns.barplot(data=media_roas_fase, x='Fase Semestral', y='ROAS', ax=ax_fase, palette='pastel')
+analise-roas  | /app/app/main.py:86: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   fig3, ax3 = plt.subplots(figsize=(10, 5))
+analise-roas  | /app/app/main.py:134: FutureWarning:
+analise-roas  | 
+analise-roas  | The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  | 
+analise-roas  | /app/app/main.py:169: UserWarning:
+analise-roas  | 
+analise-roas  | set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  | 
+analise-roas  | /app/app/main.py:184: FutureWarning:
+analise-roas  | 
+analise-roas  | The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  | 
+analise-roas  | /app/app/main.py:188: FutureWarning:
+analise-roas  | 
+analise-roas  | 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  | 
+analise-roas  | /app/app/main.py:207: FutureWarning:
+analise-roas  | 
+analise-roas  | 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  | 
+analise-roas  | /app/app/main.py:84: FutureWarning:
+analise-roas  | 
+analise-roas  | The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  | 
+analise-roas  | /app/app/main.py:118: FutureWarning:
+analise-roas  | 
+analise-roas  | The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  | 
+analise-roas  | /app/app/main.py:153: UserWarning:
+analise-roas  | 
+analise-roas  | set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  | 
+analise-roas  | /app/app/main.py:168: FutureWarning:
+analise-roas  | 
+analise-roas  | The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  | 
+analise-roas  | /app/app/main.py:172: FutureWarning:
+analise-roas  | 
+analise-roas  | 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  | 
+analise-roas  | /app/app/main.py:191: FutureWarning:
+analise-roas  | 
+analise-roas  | 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  | 
+analise-roas  | /app/app/main.py:88: FutureWarning:
+analise-roas  | 
+analise-roas  | The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  | 
+analise-roas  | /app/app/main.py:137: FutureWarning:
+analise-roas  | 
+analise-roas  | The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  | 
+analise-roas  | /app/app/main.py:172: UserWarning:
+analise-roas  | 
+analise-roas  | set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  | 
+analise-roas  | /app/app/main.py:187: FutureWarning:
+analise-roas  | 
+analise-roas  | The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  | 
+analise-roas  | /app/app/main.py:191: FutureWarning:
+analise-roas  | 
+analise-roas  | 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  | 
+analise-roas  | /app/app/main.py:210: FutureWarning:
+analise-roas  | 
+analise-roas  | 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  | 
+analise-roas  | /app/app/main.py:87: FutureWarning:
+analise-roas  | 
+analise-roas  | The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  | 
+analise-roas  | /app/app/main.py:136: FutureWarning:
+analise-roas  | 
+analise-roas  | The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  | 
+analise-roas  | /app/app/main.py:171: UserWarning:
+analise-roas  | 
+analise-roas  | set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  | 
+analise-roas  | /app/app/main.py:186: FutureWarning:
+analise-roas  | 
+analise-roas  | The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  | 
+analise-roas  | /app/app/main.py:190: FutureWarning:
+analise-roas  | 
+analise-roas  | 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  | 
+analise-roas  | /app/app/main.py:209: FutureWarning:
+analise-roas  | 
+analise-roas  | 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  | 
+analise-roas  | 2025-03-27 17:15:00.462 Uncaught app exception
+analise-roas  | Traceback (most recent call last):
+analise-roas  |   File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 542, in _run_script
+analise-roas  |     exec(code, module.__dict__)
+analise-roas  |   File "/app/app/main.py", line 89, in <module>
+analise-roas  |     crescimento_roas_absoluto = df_roas[semana_cols].mean()
+analise-roas  |                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+analise-roas  |   File "/usr/local/lib/python3.12/site-packages/pandas/core/frame.py", line 11693, in mean
+analise-roas  |     result = super().mean(axis, skipna, numeric_only, **kwargs)
+analise-roas  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+analise-roas  |   File "/usr/local/lib/python3.12/site-packages/pandas/core/generic.py", line 12420, in mean
+analise-roas  |     return self._stat_function(
+analise-roas  |            ^^^^^^^^^^^^^^^^^^^^
+analise-roas  |   File "/usr/local/lib/python3.12/site-packages/pandas/core/generic.py", line 12377, in _stat_function
+analise-roas  |     return self._reduce(
+analise-roas  |            ^^^^^^^^^^^^^
+analise-roas  |   File "/usr/local/lib/python3.12/site-packages/pandas/core/frame.py", line 11562, in _reduce
+analise-roas  |     res = df._mgr.reduce(blk_func)
+analise-roas  |           ^^^^^^^^^^^^^^^^^^^^^^^^
+analise-roas  |   File "/usr/local/lib/python3.12/site-packages/pandas/core/internals/managers.py", line 1500, in reduce
+analise-roas  |     nbs = blk.reduce(func)
+analise-roas  |           ^^^^^^^^^^^^^^^^
+analise-roas  |   File "/usr/local/lib/python3.12/site-packages/pandas/core/internals/blocks.py", line 404, in reduce
+analise-roas  |     result = func(self.values)
+analise-roas  |              ^^^^^^^^^^^^^^^^^
+analise-roas  |   File "/usr/local/lib/python3.12/site-packages/pandas/core/frame.py", line 11481, in blk_func
+analise-roas  |     return op(values, axis=axis, skipna=skipna, **kwds)
+analise-roas  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+analise-roas  |   File "/usr/local/lib/python3.12/site-packages/pandas/core/nanops.py", line 147, in f
+analise-roas  |     result = alt(values, axis=axis, skipna=skipna, **kwds)
+analise-roas  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+analise-roas  |   File "/usr/local/lib/python3.12/site-packages/pandas/core/nanops.py", line 404, in new_func
+analise-roas  |     result = func(values, axis=axis, skipna=skipna, mask=mask, **kwargs)
+analise-roas  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+analise-roas  |   File "/usr/local/lib/python3.12/site-packages/pandas/core/nanops.py", line 720, in nanmean
+analise-roas  |     the_sum = _ensure_numeric(the_sum)
+analise-roas  |               ^^^^^^^^^^^^^^^^^^^^^^^^
+analise-roas  |   File "/usr/local/lib/python3.12/site-packages/pandas/core/nanops.py", line 1686, in _ensure_numeric
+analise-roas  |     raise TypeError(f"Could not convert {x} to numeric")
+analise-roas  | TypeError: Could not convert ['08/01/2025 - 14/01/202509/01/2025 - 15/01/202510/01/2025 - 16/01/202511/01/2025 - 17/01/202512/01/2025 - 18/01/202513/01/2025 - 19/01/202514/01/2025 - 20/01/202515/01/2025 - 21/01/202516/01/2025 - 22/01/202517/01/2025 - 23/01/202518/01/2025 - 24/01/202519/01/2025 - 25/01/202520/01/2025 - 26/01/202521/01/2025 - 27/01/202522/01/2025 - 28/01/202523/01/2025 - 29/01/202524/01/2025 - 30/01/202525/01/2025 - 31/01/202526/01/2025 - 01/02/202527/01/2025 - 02/02/202528/01/2025 - 03/02/202529/01/2025 - 04/02/202530/01/2025 - 05/02/202531/01/2025 - 06/02/202501/02/2025 - 07/02/202502/02/2025 - 08/02/202503/02/2025 - 09/02/202504/02/2025 - 10/02/202505/02/2025 - 11/02/202506/02/2025 - 12/02/202507/02/2025 - 13/02/202508/02/2025 - 14/02/202509/02/2025 - 15/02/202510/02/2025 - 16/02/202511/02/2025 - 17/02/202512/02/2025 - 18/02/202513/02/2025 - 19/02/202514/02/2025 - 20/02/202515/02/2025 - 21/02/202516/02/2025 - 22/02/202517/02/2025 - 23/02/202518/02/2025 - 24/02/202519/02/2025 - 25/02/202520/02/2025 - 26/02/202521/02/2025 - 27/02/202522/02/2025 - 28/02/202523/02/2025 - 01/03/202524/02/2025 - 02/03/202525/02/2025 - 03/03/202526/02/2025 - 04/03/202527/02/2025 - 05/03/202528/02/2025 - 06/03/202501/03/2025 - 07/03/202502/03/2025 - 08/03/202503/03/2025 - 09/03/202504/03/2025 - 10/03/202505/03/2025 - 11/03/202506/03/2025 - 12/03/202507/03/2025 - 13/03/202508/03/2025 - 14/03/202509/03/2025 - 15/03/202510/03/2025 - 16/03/202511/03/2025 - 17/03/202512/03/2025 - 18/03/202513/03/2025 - 19/03/202514/03/2025 - 20/03/202515/03/2025 - 21/03/202516/03/2025 - 22/03/202517/03/2025 - 23/03/202518/03/2025 - 24/03/202519/03/2025 - 25/03/202520/03/2025 - 26/03/202521/03/2025 - 27/03/202522/03/2025 - 28/03/202523/03/2025 - 29/03/202524/03/2025 - 30/03/202525/03/2025 - 31/03/2025'] to numeric
+analise-roas  | 2025-03-27 17:16:50.508 Uncaught app exception
+analise-roas  | Traceback (most recent call last):
+analise-roas  |   File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 542, in _run_script
+analise-roas  |     exec(code, module.__dict__)
+analise-roas  |   File "/app/app/main.py", line 90, in <module>
+analise-roas  |     y=crescimento_pct.values,
+analise-roas  |       ^^^^^^^^^^^^^^^
+analise-roas  | NameError: name 'crescimento_pct' is not defined. Did you mean: 'crescimento_fase'?
+analise-roas  | 2025-03-27 17:17:01.612 Uncaught app exception
+analise-roas  | Traceback (most recent call last):
+analise-roas  |   File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 542, in _run_script
+analise-roas  |     exec(code, module.__dict__)
+analise-roas  |   File "/app/app/main.py", line 90, in <module>
+analise-roas  |     y=crescimento_pct.values,
+analise-roas  |       ^^^^^^^^^^^^^^^
+analise-roas  | NameError: name 'crescimento_pct' is not defined. Did you mean: 'crescimento_fase'?
+analise-roas  | 2025-03-27 17:17:06.308 Uncaught app exception
+analise-roas  | Traceback (most recent call last):
+analise-roas  |   File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 542, in _run_script
+analise-roas  |     exec(code, module.__dict__)
+analise-roas  |   File "/app/app/main.py", line 85, in <module>
+analise-roas  |     crescimento_pct = roas_medio_semanal.pct_change().fillna(0)
+analise-roas  |                       ^^^^^^^^^^^^^^^^^^
+analise-roas  | NameError: name 'roas_medio_semanal' is not defined
+analise-roas  | /app/app/main.py:91: FutureWarning:
+analise-roas  | 
+analise-roas  | The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  | 
+analise-roas  | 2025-03-27 17:18:20.836 Uncaught app exception
+analise-roas  | Traceback (most recent call last):
+analise-roas  |   File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 542, in _run_script
+analise-roas  |     exec(code, module.__dict__)
+analise-roas  |   File "/app/app/main.py", line 143, in <module>
+analise-roas  |     crescimento_percentual = crescimento_roas_absoluto.pct_change().fillna(0).values
+analise-roas  |                              ^^^^^^^^^^^^^^^^^^^^^^^^^
+analise-roas  | NameError: name 'crescimento_roas_absoluto' is not defined
+analise-roas  | 2025-03-27 17:20:26.175 Uncaught app exception
+analise-roas  | Traceback (most recent call last):
+analise-roas  |   File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 542, in _run_script
+analise-roas  |     exec(code, module.__dict__)
+analise-roas  |   File "/app/app/main.py", line 110, in <module>
+analise-roas  |     crescimento_percentual = crescimento_roas_absoluto.pct_change().fillna(0).values
+analise-roas  |                              ^^^^^^^^^^^^^^^^^^^^^^^^^
+analise-roas  | NameError: name 'crescimento_roas_absoluto' is not defined
+analise-roas  | 2025-03-27 17:20:27.942 Uncaught app exception
+analise-roas  | Traceback (most recent call last):
+analise-roas  |   File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 542, in _run_script
+analise-roas  |     exec(code, module.__dict__)
+analise-roas  |   File "/app/app/main.py", line 111, in <module>
+analise-roas  |     crescimento_percentual = crescimento_roas_absoluto.pct_change().fillna(0).values
+analise-roas  |                              ^^^^^^^^^^^^^^^^^^^^^^^^^
+analise-roas  | NameError: name 'crescimento_roas_absoluto' is not defined
+analise-roas  | /app/app/main.py:89: FutureWarning:
+analise-roas  | 
+analise-roas  | The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  | 
+analise-roas  | /app/app/main.py:144: FutureWarning:
+analise-roas  | 
+analise-roas  | The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  | 
+analise-roas  | /app/app/main.py:179: UserWarning:
+analise-roas  | 
+analise-roas  | set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  | 
+analise-roas  | /app/app/main.py:194: FutureWarning:
+analise-roas  | 
+analise-roas  | The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  | 
+analise-roas  | /app/app/main.py:198: FutureWarning:
+analise-roas  | 
+analise-roas  | 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  | 
+analise-roas  | /app/app/main.py:217: FutureWarning:
+analise-roas  | 
+analise-roas  | 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  | 
+analise-roas  | 2025-03-27 17:20:54.503 Uncaught app exception
+analise-roas  | Traceback (most recent call last):
+analise-roas  |   File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 542, in _run_script
+analise-roas  |     exec(code, module.__dict__)
+analise-roas  |   File "/app/app/main.py", line 85, in <module>
+analise-roas  |     crescimento_pct = roas_medio_semanal.pct_change().fillna(0)
+analise-roas  |                       ^^^^^^^^^^^^^^^^^^
+analise-roas  | NameError: name 'roas_medio_semanal' is not defined
+analise-roas  | 2025-03-27 17:20:58.431 Uncaught app exception
+analise-roas  | Traceback (most recent call last):
+analise-roas  |   File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 542, in _run_script
+analise-roas  |     exec(code, module.__dict__)
+analise-roas  |   File "/app/app/main.py", line 89, in <module>
+analise-roas  |     crescimento_roas_absoluto = df_roas[semana_cols].mean()
+analise-roas  |                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+analise-roas  |   File "/usr/local/lib/python3.12/site-packages/pandas/core/frame.py", line 11693, in mean
+analise-roas  |     result = super().mean(axis, skipna, numeric_only, **kwargs)
+analise-roas  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+analise-roas  |   File "/usr/local/lib/python3.12/site-packages/pandas/core/generic.py", line 12420, in mean
+analise-roas  |     return self._stat_function(
+analise-roas  |            ^^^^^^^^^^^^^^^^^^^^
+analise-roas  |   File "/usr/local/lib/python3.12/site-packages/pandas/core/generic.py", line 12377, in _stat_function
+analise-roas  |     return self._reduce(
+analise-roas  |            ^^^^^^^^^^^^^
+analise-roas  |   File "/usr/local/lib/python3.12/site-packages/pandas/core/frame.py", line 11562, in _reduce
+analise-roas  |     res = df._mgr.reduce(blk_func)
+analise-roas  |           ^^^^^^^^^^^^^^^^^^^^^^^^
+analise-roas  |   File "/usr/local/lib/python3.12/site-packages/pandas/core/internals/managers.py", line 1500, in reduce
+analise-roas  |     nbs = blk.reduce(func)
+analise-roas  |           ^^^^^^^^^^^^^^^^
+analise-roas  |   File "/usr/local/lib/python3.12/site-packages/pandas/core/internals/blocks.py", line 404, in reduce
+analise-roas  |     result = func(self.values)
+analise-roas  |              ^^^^^^^^^^^^^^^^^
+analise-roas  |   File "/usr/local/lib/python3.12/site-packages/pandas/core/frame.py", line 11481, in blk_func
+analise-roas  |     return op(values, axis=axis, skipna=skipna, **kwds)
+analise-roas  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+analise-roas  |   File "/usr/local/lib/python3.12/site-packages/pandas/core/nanops.py", line 147, in f
+analise-roas  |     result = alt(values, axis=axis, skipna=skipna, **kwds)
+analise-roas  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+analise-roas  |   File "/usr/local/lib/python3.12/site-packages/pandas/core/nanops.py", line 404, in new_func
+analise-roas  |     result = func(values, axis=axis, skipna=skipna, mask=mask, **kwargs)
+analise-roas  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+analise-roas  |   File "/usr/local/lib/python3.12/site-packages/pandas/core/nanops.py", line 720, in nanmean
+analise-roas  |     the_sum = _ensure_numeric(the_sum)
+analise-roas  |               ^^^^^^^^^^^^^^^^^^^^^^^^
+analise-roas  |   File "/usr/local/lib/python3.12/site-packages/pandas/core/nanops.py", line 1686, in _ensure_numeric
+analise-roas  |     raise TypeError(f"Could not convert {x} to numeric")
+analise-roas  | TypeError: Could not convert ['08/01/2025 - 14/01/202509/01/2025 - 15/01/202510/01/2025 - 16/01/202511/01/2025 - 17/01/202512/01/2025 - 18/01/202513/01/2025 - 19/01/202514/01/2025 - 20/01/202515/01/2025 - 21/01/202516/01/2025 - 22/01/202517/01/2025 - 23/01/202518/01/2025 - 24/01/202519/01/2025 - 25/01/202520/01/2025 - 26/01/202521/01/2025 - 27/01/202522/01/2025 - 28/01/202523/01/2025 - 29/01/202524/01/2025 - 30/01/202525/01/2025 - 31/01/202526/01/2025 - 01/02/202527/01/2025 - 02/02/202528/01/2025 - 03/02/202529/01/2025 - 04/02/202530/01/2025 - 05/02/202531/01/2025 - 06/02/202501/02/2025 - 07/02/202502/02/2025 - 08/02/202503/02/2025 - 09/02/202504/02/2025 - 10/02/202505/02/2025 - 11/02/202506/02/2025 - 12/02/202507/02/2025 - 13/02/202508/02/2025 - 14/02/202509/02/2025 - 15/02/202510/02/2025 - 16/02/202511/02/2025 - 17/02/202512/02/2025 - 18/02/202513/02/2025 - 19/02/202514/02/2025 - 20/02/202515/02/2025 - 21/02/202516/02/2025 - 22/02/202517/02/2025 - 23/02/202518/02/2025 - 24/02/202519/02/2025 - 25/02/202520/02/2025 - 26/02/202521/02/2025 - 27/02/202522/02/2025 - 28/02/202523/02/2025 - 01/03/202524/02/2025 - 02/03/202525/02/2025 - 03/03/202526/02/2025 - 04/03/202527/02/2025 - 05/03/202528/02/2025 - 06/03/202501/03/2025 - 07/03/202502/03/2025 - 08/03/202503/03/2025 - 09/03/202504/03/2025 - 10/03/202505/03/2025 - 11/03/202506/03/2025 - 12/03/202507/03/2025 - 13/03/202508/03/2025 - 14/03/202509/03/2025 - 15/03/202510/03/2025 - 16/03/202511/03/2025 - 17/03/202512/03/2025 - 18/03/202513/03/2025 - 19/03/202514/03/2025 - 20/03/202515/03/2025 - 21/03/202516/03/2025 - 22/03/202517/03/2025 - 23/03/202518/03/2025 - 24/03/202519/03/2025 - 25/03/202520/03/2025 - 26/03/202521/03/2025 - 27/03/202522/03/2025 - 28/03/202523/03/2025 - 29/03/202524/03/2025 - 30/03/202525/03/2025 - 31/03/2025'] to numeric
+analise-roas  | /app/app/main.py:87: FutureWarning:
+analise-roas  | 
+analise-roas  | The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  | 
+analise-roas  | /app/app/main.py:136: FutureWarning:
+analise-roas  | 
+analise-roas  | The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  | 
+analise-roas  | /app/app/main.py:171: UserWarning:
+analise-roas  | 
+analise-roas  | set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  | 
+analise-roas  | /app/app/main.py:186: FutureWarning:
+analise-roas  | 
+analise-roas  | The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  | 
+analise-roas  | /app/app/main.py:190: FutureWarning:
+analise-roas  | 
+analise-roas  | 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  | 
+analise-roas  | /app/app/main.py:209: FutureWarning:
+analise-roas  | 
+analise-roas  | 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  | 
+analise-roas  | /app/app/main.py:88: FutureWarning:
+analise-roas  | 
+analise-roas  | The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  | 
+analise-roas  | /app/app/main.py:137: FutureWarning:
+analise-roas  | 
+analise-roas  | The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  | 
+analise-roas  | /app/app/main.py:172: UserWarning:
+analise-roas  | 
+analise-roas  | set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  | 
+analise-roas  | /app/app/main.py:187: FutureWarning:
+analise-roas  | 
+analise-roas  | The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  | 
+analise-roas  | /app/app/main.py:191: FutureWarning:
+analise-roas  | 
+analise-roas  | 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  | 
+analise-roas  | /app/app/main.py:210: FutureWarning:
+analise-roas  | 
+analise-roas  | 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  | 
+analise-roas  | /app/app/main.py:84: FutureWarning:
+analise-roas  | 
+analise-roas  | The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  | 
+analise-roas  | /app/app/main.py:118: FutureWarning:
+analise-roas  | 
+analise-roas  | The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  | 
+analise-roas  | /app/app/main.py:153: UserWarning:
+analise-roas  | 
+analise-roas  | set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  | 
+analise-roas  | /app/app/main.py:168: FutureWarning:
+analise-roas  | 
+analise-roas  | The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  | 
+analise-roas  | /app/app/main.py:172: FutureWarning:
+analise-roas  | 
+analise-roas  | 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  | 
+analise-roas  | /app/app/main.py:191: FutureWarning:
+analise-roas  | 
+analise-roas  | 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  | 
+analise-roas  | /app/app/main.py:89: FutureWarning:
+analise-roas  | 
+analise-roas  | The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  | 
+analise-roas  | /app/app/main.py:141: FutureWarning:
+analise-roas  | 
+analise-roas  | The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  | 
+analise-roas  | /app/app/main.py:176: UserWarning:
+analise-roas  | 
+analise-roas  | set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  | 
+analise-roas  | /app/app/main.py:191: FutureWarning:
+analise-roas  | 
+analise-roas  | The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  | 
+analise-roas  | /app/app/main.py:195: FutureWarning:
+analise-roas  | 
+analise-roas  | 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  | 
+analise-roas  | /app/app/main.py:214: FutureWarning:
+analise-roas  | 
+analise-roas  | 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  | 
+analise-roas  | /app/app/main.py:84: FutureWarning:
+analise-roas  | 
+analise-roas  | The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  | 
+analise-roas  | /app/app/main.py:118: FutureWarning:
+analise-roas  | 
+analise-roas  | The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  | 
+analise-roas  | /app/app/main.py:153: UserWarning:
+analise-roas  | 
+analise-roas  | set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  | 
+analise-roas  | /app/app/main.py:168: FutureWarning:
+analise-roas  | 
+analise-roas  | The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  | 
+analise-roas  | /app/app/main.py:172: FutureWarning:
+analise-roas  | 
+analise-roas  | 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  | 
+analise-roas  | /app/app/main.py:191: FutureWarning:
+analise-roas  | 
+analise-roas  | 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  | 
+analise-roas  | /app/app/main.py:82: FutureWarning:
+analise-roas  | 
+analise-roas  | The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  | 
+analise-roas  | /app/app/main.py:116: FutureWarning:
+analise-roas  | 
+analise-roas  | The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  | 
+analise-roas  | /app/app/main.py:151: UserWarning:
+analise-roas  | 
+analise-roas  | set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  | 
+analise-roas  | /app/app/main.py:166: FutureWarning:
+analise-roas  | 
+analise-roas  | The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  | 
+analise-roas  | /app/app/main.py:170: FutureWarning:
+analise-roas  | 
+analise-roas  | 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  | 
+analise-roas  | /app/app/main.py:189: FutureWarning:
+analise-roas  | 
+analise-roas  | 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  | 
+analise-roas  | /app/app/main.py:82: FutureWarning:
+analise-roas  | 
+analise-roas  | The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  | 
+analise-roas  | /app/app/main.py:116: FutureWarning:
+analise-roas  | 
+analise-roas  | The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  | 
+analise-roas  | /app/app/main.py:151: UserWarning:
+analise-roas  | 
+analise-roas  | set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  | 
+analise-roas  | /app/app/main.py:166: FutureWarning:
+analise-roas  | 
+analise-roas  | The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  | 
+analise-roas  | /app/app/main.py:170: FutureWarning:
+analise-roas  | 
+analise-roas  | 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  | 
+analise-roas  | /app/app/main.py:189: FutureWarning:
+analise-roas  | 
+analise-roas  | 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  | 
+analise-roas  | /app/app/main.py:82: FutureWarning:
+analise-roas  | 
+analise-roas  | The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  | 
+analise-roas  | /app/app/main.py:116: FutureWarning:
+analise-roas  | 
+analise-roas  | The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  | 
+analise-roas  | /app/app/main.py:151: UserWarning:
+analise-roas  | 
+analise-roas  | set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  | 
+analise-roas  | /app/app/main.py:166: FutureWarning:
+analise-roas  | 
+analise-roas  | The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  | 
+analise-roas  | /app/app/main.py:170: FutureWarning:
+analise-roas  | 
+analise-roas  | 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  | 
+analise-roas  | /app/app/main.py:189: FutureWarning:
+analise-roas  | 
+analise-roas  | 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  | 
+analise-roas  | /app/app/main.py:82: FutureWarning:
+analise-roas  | 
+analise-roas  | The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  | 
+analise-roas  | /app/app/main.py:116: FutureWarning:
+analise-roas  | 
+analise-roas  | The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  | 
+analise-roas  | /app/app/main.py:151: UserWarning:
+analise-roas  | 
+analise-roas  | set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  | 
+analise-roas  | /app/app/main.py:166: FutureWarning:
+analise-roas  | 
+analise-roas  | The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  | 
+analise-roas  | /app/app/main.py:170: FutureWarning:
+analise-roas  | 
+analise-roas  | 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  | 
+analise-roas  | /app/app/main.py:189: FutureWarning:
+analise-roas  | 
+analise-roas  | 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  | 
+analise-roas  | /app/app/main.py:82: FutureWarning:
+analise-roas  | 
+analise-roas  | The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  | 
+analise-roas  | /app/app/main.py:116: FutureWarning:
+analise-roas  | 
+analise-roas  | The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  | 
+analise-roas  | /app/app/main.py:151: UserWarning:
+analise-roas  | 
+analise-roas  | set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  | 
+analise-roas  | /app/app/main.py:166: FutureWarning:
+analise-roas  | 
+analise-roas  | The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  | 
+analise-roas  | /app/app/main.py:170: FutureWarning:
+analise-roas  | 
+analise-roas  | 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  | 
+analise-roas  | /app/app/main.py:189: FutureWarning:
+analise-roas  | 
+analise-roas  | 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  | 
+analise-roas  | /app/app/main.py:82: FutureWarning:
+analise-roas  | 
+analise-roas  | The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  | 
+analise-roas  | /app/app/main.py:116: FutureWarning:
+analise-roas  | 
+analise-roas  | The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  | 
+analise-roas  | /app/app/main.py:151: UserWarning:
+analise-roas  | 
+analise-roas  | set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  | 
+analise-roas  | /app/app/main.py:82: FutureWarning:
+analise-roas  | 
+analise-roas  | The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  | 
+analise-roas  | /app/app/main.py:116: FutureWarning:
+analise-roas  | 
+analise-roas  | The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  | 
+analise-roas  | /app/app/main.py:151: UserWarning:
+analise-roas  | 
+analise-roas  | set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  | 
+analise-roas  | /app/app/main.py:166: FutureWarning:
+analise-roas  | 
+analise-roas  | The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  | 
+analise-roas  | /app/app/main.py:170: FutureWarning:
+analise-roas  | 
+analise-roas  | 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  | 
+analise-roas  | /app/app/main.py:189: FutureWarning:
+analise-roas  | 
+analise-roas  | 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  | 
+analise-roas  | /app/app/main.py:82: FutureWarning:
+analise-roas  | 
+analise-roas  | The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  | 
+analise-roas  | /app/app/main.py:116: FutureWarning:
+analise-roas  | 
+analise-roas  | The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  | 
+analise-roas  | /app/app/main.py:151: UserWarning:
+analise-roas  | 
+analise-roas  | set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  | 
+analise-roas  | /app/app/main.py:166: FutureWarning:
+analise-roas  | 
+analise-roas  | The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  | 
+analise-roas  | /app/app/main.py:170: FutureWarning:
+analise-roas  | 
+analise-roas  | 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  | 
+analise-roas  | /app/app/main.py:189: FutureWarning:
+analise-roas  | 
+analise-roas  | 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  | 
+analise-roas  | /app/app/main.py:82: FutureWarning:
+analise-roas  | 
+analise-roas  | The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  | 
+analise-roas  | /app/app/main.py:116: FutureWarning:
+analise-roas  | 
+analise-roas  | The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  | 
+analise-roas  | /app/app/main.py:151: UserWarning:
+analise-roas  | 
+analise-roas  | set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  | 
+analise-roas  | /app/app/main.py:166: FutureWarning:
+analise-roas  | 
+analise-roas  | The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  | 
+analise-roas  | /app/app/main.py:170: FutureWarning:
+analise-roas  | 
+analise-roas  | 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  | 
+analise-roas  | /app/app/main.py:189: FutureWarning:
+analise-roas  | 
+analise-roas  | 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  | 
+analise-roas  |   Stopping...

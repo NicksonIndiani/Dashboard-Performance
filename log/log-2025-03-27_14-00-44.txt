@@ -1,0 +1,429 @@
+time="2025-03-27T14:00:44-03:00" level=warning msg="/home/nickson/Dashboard-Performance/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+Compose can now delegate builds to bake for better performance.
+ To do so, set COMPOSE_BAKE=true.
+#0 building with "default" instance using docker driver
+
+#1 [analise-roas internal] load build definition from Dockerfile
+#1 transferring dockerfile: 600B done
+#1 DONE 0.0s
+
+#2 [analise-roas internal] load metadata for docker.io/library/python:3.12-slim
+#2 DONE 0.6s
+
+#3 [analise-roas internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [analise-roas 1/6] FROM docker.io/library/python:3.12-slim@sha256:a866731a6b71c4a194a845d86e06568725e430ed21821d0c52e4efb385cf6c6f
+#4 DONE 0.0s
+
+#5 [analise-roas internal] load build context
+#5 transferring context: 91B done
+#5 DONE 0.0s
+
+#6 [analise-roas 4/6] COPY requirements.txt .
+#6 CACHED
+
+#7 [analise-roas 2/6] RUN apt-get update && apt-get install -y     build-essential     libglib2.0-0     libsm6     libxext6     libxrender-dev     libfontconfig1     && rm -rf /var/lib/apt/lists/*
+#7 CACHED
+
+#8 [analise-roas 3/6] WORKDIR /app
+#8 CACHED
+
+#9 [analise-roas 5/6] RUN pip install --upgrade pip && pip install -r requirements.txt
+#9 CACHED
+
+#10 [analise-roas 6/6] COPY app/ ./app/
+#10 CACHED
+
+#11 [analise-roas] exporting to image
+#11 exporting layers done
+#11 writing image sha256:1f7bce71cf06972caea8c4f219d90836b04b1f2e0123da5c5596e670a5bd6686 done
+#11 naming to docker.io/library/dashboard-performance-analise-roas done
+#11 DONE 0.0s
+
+#12 [analise-roas] resolving provenance for metadata file
+#12 DONE 0.0s
+ analise-roas  Built
+ Network dashboard-performance_default  Creating
+ Network dashboard-performance_default  Created
+ Container analise-roas  Creating
+ Container analise-roas  Created
+Attaching to analise-roas
+analise-roas  | 
+analise-roas  | Collecting usage statistics. To deactivate, set browser.gatherUsageStats to False.
+analise-roas  | 
+analise-roas  | 
+analise-roas  |   You can now view your Streamlit app in your browser.
+analise-roas  | 
+analise-roas  |   URL: http://0.0.0.0:8501
+analise-roas  | 
+analise-roas  | /app/app/main.py:78: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   crescimento_roas_pct = crescimento_roas_absoluto.pct_change().fillna(0)
+analise-roas  | /app/app/main.py:102: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   crescimento_percentual = crescimento_roas_absoluto.pct_change().fillna(0).values
+analise-roas  | /app/app/main.py:137: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  |   ax5.set_xticklabels(df_plot['Semana'], rotation=45)
+analise-roas  | /app/app/main.py:147: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  |   roas_por_faixa = df_unificado.groupby("Faixa de Investimento")["ROAS"].agg(['mean', 'count']).reset_index()
+analise-roas  | /app/app/main.py:151: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   sns.barplot(data=roas_por_faixa, x='Faixa de Investimento', y='mean', palette='Blues_d', ax=ax2)
+analise-roas  | /app/app/main.py:165: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   sns.barplot(data=media_roas_fase, x='Fase Semestral', y='ROAS', ax=ax_fase, palette='pastel')
+analise-roas  | /app/app/main.py:78: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   crescimento_roas_pct = crescimento_roas_absoluto.pct_change().fillna(0)
+analise-roas  | /app/app/main.py:102: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   crescimento_percentual = crescimento_roas_absoluto.pct_change().fillna(0).values
+analise-roas  | /app/app/main.py:137: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  |   ax5.set_xticklabels(df_plot['Semana'], rotation=45)
+analise-roas  | /app/app/main.py:147: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  |   roas_por_faixa = df_unificado.groupby("Faixa de Investimento")["ROAS"].agg(['mean', 'count']).reset_index()
+analise-roas  | /app/app/main.py:151: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   sns.barplot(data=roas_por_faixa, x='Faixa de Investimento', y='mean', palette='Blues_d', ax=ax2)
+analise-roas  | /app/app/main.py:165: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   sns.barplot(data=media_roas_fase, x='Fase Semestral', y='ROAS', ax=ax_fase, palette='pastel')
+analise-roas  | /app/app/main.py:78: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   crescimento_roas_pct = crescimento_roas_absoluto.pct_change().fillna(0)
+analise-roas  | /app/app/main.py:102: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   crescimento_percentual = crescimento_roas_absoluto.pct_change().fillna(0).values
+analise-roas  | /app/app/main.py:137: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  |   ax5.set_xticklabels(df_plot['Semana'], rotation=45)
+analise-roas  | /app/app/main.py:147: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  |   roas_por_faixa = df_unificado.groupby("Faixa de Investimento")["ROAS"].agg(['mean', 'count']).reset_index()
+analise-roas  | /app/app/main.py:151: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   sns.barplot(data=roas_por_faixa, x='Faixa de Investimento', y='mean', palette='Blues_d', ax=ax2)
+analise-roas  | /app/app/main.py:165: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   sns.barplot(data=media_roas_fase, x='Fase Semestral', y='ROAS', ax=ax_fase, palette='pastel')
+analise-roas  | /app/app/main.py:78: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   crescimento_roas_pct = crescimento_roas_absoluto.pct_change().fillna(0)
+analise-roas  | /app/app/main.py:102: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   crescimento_percentual = crescimento_roas_absoluto.pct_change().fillna(0).values
+analise-roas  | /app/app/main.py:137: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  |   ax5.set_xticklabels(df_plot['Semana'], rotation=45)
+analise-roas  | /app/app/main.py:147: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  |   roas_por_faixa = df_unificado.groupby("Faixa de Investimento")["ROAS"].agg(['mean', 'count']).reset_index()
+analise-roas  | /app/app/main.py:151: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   sns.barplot(data=roas_por_faixa, x='Faixa de Investimento', y='mean', palette='Blues_d', ax=ax2)
+analise-roas  | /app/app/main.py:165: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   sns.barplot(data=media_roas_fase, x='Fase Semestral', y='ROAS', ax=ax_fase, palette='pastel')
+analise-roas  | /app/app/main.py:78: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   crescimento_roas_pct = crescimento_roas_absoluto.pct_change().fillna(0)
+analise-roas  | /app/app/main.py:102: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   crescimento_percentual = crescimento_roas_absoluto.pct_change().fillna(0).values
+analise-roas  | /app/app/main.py:137: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  |   ax5.set_xticklabels(df_plot['Semana'], rotation=45)
+analise-roas  | /app/app/main.py:147: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  |   roas_por_faixa = df_unificado.groupby("Faixa de Investimento")["ROAS"].agg(['mean', 'count']).reset_index()
+analise-roas  | /app/app/main.py:151: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   sns.barplot(data=roas_por_faixa, x='Faixa de Investimento', y='mean', palette='Blues_d', ax=ax2)
+analise-roas  | /app/app/main.py:165: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   sns.barplot(data=media_roas_fase, x='Fase Semestral', y='ROAS', ax=ax_fase, palette='pastel')
+analise-roas  | /app/app/main.py:78: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   crescimento_roas_pct = crescimento_roas_absoluto.pct_change().fillna(0)
+analise-roas  | /app/app/main.py:102: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   crescimento_percentual = crescimento_roas_absoluto.pct_change().fillna(0).values
+analise-roas  | /app/app/main.py:137: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  |   ax5.set_xticklabels(df_plot['Semana'], rotation=45)
+analise-roas  | /app/app/main.py:147: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  |   roas_por_faixa = df_unificado.groupby("Faixa de Investimento")["ROAS"].agg(['mean', 'count']).reset_index()
+analise-roas  | /app/app/main.py:151: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   sns.barplot(data=roas_por_faixa, x='Faixa de Investimento', y='mean', palette='Blues_d', ax=ax2)
+analise-roas  | /app/app/main.py:165: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   sns.barplot(data=media_roas_fase, x='Fase Semestral', y='ROAS', ax=ax_fase, palette='pastel')
+analise-roas  | /app/app/main.py:78: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   crescimento_roas_pct = crescimento_roas_absoluto.pct_change().fillna(0)
+analise-roas  | /app/app/main.py:102: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   crescimento_percentual = crescimento_roas_absoluto.pct_change().fillna(0).values
+analise-roas  | /app/app/main.py:137: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  |   ax5.set_xticklabels(df_plot['Semana'], rotation=45)
+analise-roas  | /app/app/main.py:147: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  |   roas_por_faixa = df_unificado.groupby("Faixa de Investimento")["ROAS"].agg(['mean', 'count']).reset_index()
+analise-roas  | /app/app/main.py:151: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   sns.barplot(data=roas_por_faixa, x='Faixa de Investimento', y='mean', palette='Blues_d', ax=ax2)
+analise-roas  | /app/app/main.py:165: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   sns.barplot(data=media_roas_fase, x='Fase Semestral', y='ROAS', ax=ax_fase, palette='pastel')
+analise-roas  | /app/app/main.py:78: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   crescimento_roas_pct = crescimento_roas_absoluto.pct_change().fillna(0)
+analise-roas  | /app/app/main.py:102: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   crescimento_percentual = crescimento_roas_absoluto.pct_change().fillna(0).values
+analise-roas  | /app/app/main.py:137: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  |   ax5.set_xticklabels(df_plot['Semana'], rotation=45)
+analise-roas  | /app/app/main.py:147: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  |   roas_por_faixa = df_unificado.groupby("Faixa de Investimento")["ROAS"].agg(['mean', 'count']).reset_index()
+analise-roas  | /app/app/main.py:151: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   sns.barplot(data=roas_por_faixa, x='Faixa de Investimento', y='mean', palette='Blues_d', ax=ax2)
+analise-roas  | /app/app/main.py:165: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   sns.barplot(data=media_roas_fase, x='Fase Semestral', y='ROAS', ax=ax_fase, palette='pastel')
+analise-roas  | /app/app/main.py:78: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   crescimento_roas_pct = crescimento_roas_absoluto.pct_change().fillna(0)
+analise-roas  | /app/app/main.py:102: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   crescimento_percentual = crescimento_roas_absoluto.pct_change().fillna(0).values
+analise-roas  | /app/app/main.py:137: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  |   ax5.set_xticklabels(df_plot['Semana'], rotation=45)
+analise-roas  | /app/app/main.py:147: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  |   roas_por_faixa = df_unificado.groupby("Faixa de Investimento")["ROAS"].agg(['mean', 'count']).reset_index()
+analise-roas  | /app/app/main.py:151: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   sns.barplot(data=roas_por_faixa, x='Faixa de Investimento', y='mean', palette='Blues_d', ax=ax2)
+analise-roas  | /app/app/main.py:165: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   sns.barplot(data=media_roas_fase, x='Fase Semestral', y='ROAS', ax=ax_fase, palette='pastel')
+analise-roas  | /app/app/main.py:78: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   crescimento_roas_pct = crescimento_roas_absoluto.pct_change().fillna(0)
+analise-roas  | /app/app/main.py:102: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   crescimento_percentual = crescimento_roas_absoluto.pct_change().fillna(0).values
+analise-roas  | /app/app/main.py:137: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  |   ax5.set_xticklabels(df_plot['Semana'], rotation=45)
+analise-roas  | /app/app/main.py:147: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  |   roas_por_faixa = df_unificado.groupby("Faixa de Investimento")["ROAS"].agg(['mean', 'count']).reset_index()
+analise-roas  | /app/app/main.py:151: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   sns.barplot(data=roas_por_faixa, x='Faixa de Investimento', y='mean', palette='Blues_d', ax=ax2)
+analise-roas  | /app/app/main.py:168: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   ax_fase.legend()
+analise-roas  | /app/app/main.py:78: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   crescimento_roas_pct = crescimento_roas_absoluto.pct_change().fillna(0)
+analise-roas  | /app/app/main.py:102: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   crescimento_percentual = crescimento_roas_absoluto.pct_change().fillna(0).values
+analise-roas  | /app/app/main.py:137: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  |   ax5.set_xticklabels(df_plot['Semana'], rotation=45)
+analise-roas  | /app/app/main.py:147: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  |   roas_por_faixa = df_unificado.groupby("Faixa de Investimento")["ROAS"].agg(['mean', 'count']).reset_index()
+analise-roas  | /app/app/main.py:151: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   sns.barplot(data=roas_por_faixa, x='Faixa de Investimento', y='mean', palette='Blues_d', ax=ax2)
+analise-roas  | /app/app/main.py:170: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   
+analise-roas  | /app/app/main.py:78: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   crescimento_roas_pct = crescimento_roas_absoluto.pct_change().fillna(0)
+analise-roas  | /app/app/main.py:102: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   crescimento_percentual = crescimento_roas_absoluto.pct_change().fillna(0).values
+analise-roas  | /app/app/main.py:137: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  |   ax5.set_xticklabels(df_plot['Semana'], rotation=45)
+analise-roas  | /app/app/main.py:150: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  |   fig2, ax2 = plt.subplots(figsize=(10, 5))
+analise-roas  | /app/app/main.py:154: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   ax2.set_ylabel('ROAS Médio')
+analise-roas  | /app/app/main.py:173: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   # “Das coortes que efetivamente atingiram ROAS ≥ 1.34, a média de tempo para atingir esse valor foi 5.86 semanas.”
+analise-roas  | /app/app/main.py:78: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   crescimento_roas_pct = crescimento_roas_absoluto.pct_change().fillna(0)
+analise-roas  | /app/app/main.py:102: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   crescimento_percentual = crescimento_roas_absoluto.pct_change().fillna(0).values
+analise-roas  | /app/app/main.py:137: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  |   ax5.set_xticklabels(df_plot['Semana'], rotation=45)
+analise-roas  | /app/app/main.py:153: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  |   ax2.set_title('ROAS Médio por Faixa de Investimento')
+analise-roas  | /app/app/main.py:157: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   ax2.grid(True)
+analise-roas  | /app/app/main.py:176: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   def semana_atinge_134(linha):
+analise-roas  | /app/app/main.py:78: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   crescimento_roas_pct = crescimento_roas_absoluto.pct_change().fillna(0)
+analise-roas  | /app/app/main.py:102: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   crescimento_percentual = crescimento_roas_absoluto.pct_change().fillna(0).values
+analise-roas  | /app/app/main.py:137: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  |   ax5.set_xticklabels(df_plot['Semana'], rotation=45)
+analise-roas  | /app/app/main.py:152: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  |   ax2.axhline(1.34, color='red', linestyle='--', label='Meta ROAS (1.34)')
+analise-roas  | /app/app/main.py:156: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   ax2.legend()
+analise-roas  | /app/app/main.py:175: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   st.header("⏳ Semanas até atingir ROAS 1.34")
+analise-roas  | /app/app/main.py:78: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   crescimento_roas_pct = crescimento_roas_absoluto.pct_change().fillna(0)
+analise-roas  | /app/app/main.py:105: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   baixo, alto = 0.4, 1.0
+analise-roas  | /app/app/main.py:140: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  |   st.pyplot(fig5)
+analise-roas  | /app/app/main.py:155: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  |   ax2.set_xlabel('Faixa de Investimento')
+analise-roas  | /app/app/main.py:159: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   
+analise-roas  | /app/app/main.py:178: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   if val >= 1.34:
+analise-roas  | /app/app/main.py:78: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   crescimento_roas_pct = crescimento_roas_absoluto.pct_change().fillna(0)
+analise-roas  | /app/app/main.py:107: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   meio = (baixo + alto) / 2
+analise-roas  | /app/app/main.py:142: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  |   # ROI por faixa de investimento
+analise-roas  | /app/app/main.py:157: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  |   ax2.grid(True)
+analise-roas  | /app/app/main.py:161: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   st.header("📊 ROAS Médio por Fase Sazonal")
+analise-roas  | /app/app/main.py:180: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   return np.nan
+analise-roas  | /app/app/main.py:78: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   crescimento_roas_pct = crescimento_roas_absoluto.pct_change().fillna(0)
+analise-roas  | /app/app/main.py:110: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   valor *= (1 + taxa)
+analise-roas  | /app/app/main.py:145: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  |   labels = ["até R$100k", "R$100k–150k", "R$150k–200k", "R$200k–250k", "R$250k–300k", "acima de R$300k"]
+analise-roas  | /app/app/main.py:160: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  |   # INSIGHT 1: ROAS médio por fase
+analise-roas  | /app/app/main.py:164: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   fig_fase, ax_fase = plt.subplots()
+analise-roas  | /app/app/main.py:183: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   tempo_medio = df_roas['Semana Atinge 1.34'].mean()
+analise-roas  | /app/app/main.py:78: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   crescimento_roas_pct = crescimento_roas_absoluto.pct_change().fillna(0)
+analise-roas  | /app/app/main.py:112: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   alto = meio
+analise-roas  | /app/app/main.py:147: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  |   roas_por_faixa = df_unificado.groupby("Faixa de Investimento")["ROAS"].agg(['mean', 'count']).reset_index()
+analise-roas  | /app/app/main.py:162: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  |   media_roas_fase = df_unificado.groupby("Fase Semestral")["ROAS"].mean().reset_index()
+analise-roas  | /app/app/main.py:166: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   ax_fase.axhline(1.34, color='red', linestyle='--', label='Meta ROAS')
+analise-roas  | /app/app/main.py:185: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   st.metric("Semana Média para Atingir 1.34", round(tempo_medio, 2))
+analise-roas  | /app/app/main.py:83: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   ax3.set_xlabel("Semana")
+analise-roas  | /app/app/main.py:117: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   valor_ideal_exato = encontrar_valor_inicial_exato(crescimento_percentual)
+analise-roas  | /app/app/main.py:152: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  |   ax2.axhline(1.34, color='red', linestyle='--', label='Meta ROAS (1.34)')
+analise-roas  | /app/app/main.py:167: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  |   ax_fase.set_title("ROAS Médio por Fase")
+analise-roas  | /app/app/main.py:171: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   # INSIGHT 3: Semanas até atingir ROAS 1.34
+analise-roas  | /app/app/main.py:190: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   
+analise-roas  | /app/app/main.py:83: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   ax3.set_xlabel("Semana")
+analise-roas  | /app/app/main.py:117: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas  |   valor_ideal_exato = encontrar_valor_inicial_exato(crescimento_percentual)
+analise-roas  | /app/app/main.py:152: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+analise-roas  |   ax2.axhline(1.34, color='red', linestyle='--', label='Meta ROAS (1.34)')
+analise-roas  | /app/app/main.py:167: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas  |   ax_fase.set_title("ROAS Médio por Fase")
+analise-roas  | /app/app/main.py:171: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   # INSIGHT 3: Semanas até atingir ROAS 1.34
+analise-roas  | /app/app/main.py:190: FutureWarning: 
+analise-roas  | 
+analise-roas  | Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+analise-roas  | 
+analise-roas  |   
+analise-roas  | 2025-03-27 17:10:00.388 Uncaught app exception
+analise-roas  | Traceback (most recent call last):
+analise-roas  |   File "/usr/local/lib/python3.12/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 542, in _run_script
+analise-roas  |     exec(code, module.__dict__)
+analise-roas  |   File "/app/app/main.py", line 6, in <module>
+analise-roas  |     import plotly.graph_objects as go
+analise-roas  | ModuleNotFoundError: No module named 'plotly'
+analise-roas  |   Stopping...
+[Kanalise-roas exited with code 0

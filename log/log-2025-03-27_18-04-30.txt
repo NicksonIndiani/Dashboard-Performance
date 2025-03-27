@@ -1,0 +1,346 @@
+time="2025-03-27T18:04:30-03:00" level=warning msg="/home/nickson/Dashboard-Performance/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+Compose can now delegate builds to bake for better performance.
+ To do so, set COMPOSE_BAKE=true.
+#0 building with "default" instance using docker driver
+
+#1 [analise-roas internal] load build definition from Dockerfile
+#1 transferring dockerfile: 600B done
+#1 DONE 0.0s
+
+#2 [analise-roas internal] load metadata for docker.io/library/python:3.12-slim
+#2 DONE 1.5s
+
+#3 [analise-roas internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [analise-roas 1/6] FROM docker.io/library/python:3.12-slim@sha256:a866731a6b71c4a194a845d86e06568725e430ed21821d0c52e4efb385cf6c6f
+#4 DONE 0.0s
+
+#5 [analise-roas internal] load build context
+#5 transferring context: 19.78kB done
+#5 DONE 0.0s
+
+#6 [analise-roas 2/6] RUN apt-get update && apt-get install -y     build-essential     libglib2.0-0     libsm6     libxext6     libxrender-dev     libfontconfig1     && rm -rf /var/lib/apt/lists/*
+#6 CACHED
+
+#7 [analise-roas 3/6] WORKDIR /app
+#7 CACHED
+
+#8 [analise-roas 4/6] COPY requirements.txt .
+#8 DONE 0.0s
+
+#9 [analise-roas 5/6] RUN pip install --upgrade pip && pip install -r requirements.txt
+#9 1.245 Requirement already satisfied: pip in /usr/local/lib/python3.12/site-packages (24.3.1)
+#9 1.347 Collecting pip
+#9 1.404   Downloading pip-25.0.1-py3-none-any.whl.metadata (3.7 kB)
+#9 1.423 Downloading pip-25.0.1-py3-none-any.whl (1.8 MB)
+#9 1.546    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 18.3 MB/s eta 0:00:00
+#9 1.556 Installing collected packages: pip
+#9 1.556   Attempting uninstall: pip
+#9 1.557     Found existing installation: pip 24.3.1
+#9 1.573     Uninstalling pip-24.3.1:
+#9 1.640       Successfully uninstalled pip-24.3.1
+#9 2.148 Successfully installed pip-25.0.1
+#9 2.149 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable.It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#9 2.580 Collecting streamlit==1.32.0 (from -r requirements.txt (line 1))
+#9 2.643   Downloading streamlit-1.32.0-py2.py3-none-any.whl.metadata (8.5 kB)
+#9 2.717 Collecting pandas (from -r requirements.txt (line 2))
+#9 2.743   Downloading pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (89 kB)
+#9 2.841 Collecting seaborn (from -r requirements.txt (line 3))
+#9 2.853   Downloading seaborn-0.13.2-py3-none-any.whl.metadata (5.4 kB)
+#9 2.943 Collecting numpy (from -r requirements.txt (line 4))
+#9 2.953   Downloading numpy-2.2.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (62 kB)
+#9 3.040 Collecting matplotlib (from -r requirements.txt (line 5))
+#9 3.051   Downloading matplotlib-3.10.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (11 kB)
+#9 3.084 Collecting streamlit-extras>=0.2.6 (from -r requirements.txt (line 6))
+#9 3.093   Downloading streamlit_extras-0.6.0-py3-none-any.whl.metadata (4.0 kB)
+#9 3.239 Collecting streamlit-elements>=0.1.0 (from -r requirements.txt (line 7))
+#9 3.250   Downloading streamlit_elements-0.1.0-py3-none-any.whl.metadata (19 kB)
+#9 3.280 Collecting altair>=5.0.0 (from -r requirements.txt (line 8))
+#9 3.289   Downloading altair-5.5.0-py3-none-any.whl.metadata (11 kB)
+#9 3.469 Collecting streamlit-option-menu (from -r requirements.txt (line 9))
+#9 3.480   Downloading streamlit_option_menu-0.4.0-py3-none-any.whl.metadata (2.5 kB)
+#9 3.510 Collecting blinker<2,>=1.0.0 (from streamlit==1.32.0->-r requirements.txt (line 1))
+#9 3.520   Downloading blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+#9 3.556 Collecting cachetools<6,>=4.0 (from streamlit==1.32.0->-r requirements.txt (line 1))
+#9 3.564   Downloading cachetools-5.5.2-py3-none-any.whl.metadata (5.4 kB)
+#9 3.592 Collecting click<9,>=7.0 (from streamlit==1.32.0->-r requirements.txt (line 1))
+#9 3.601   Downloading click-8.1.8-py3-none-any.whl.metadata (2.3 kB)
+#9 3.615 Collecting numpy (from -r requirements.txt (line 4))
+#9 3.624   Downloading numpy-1.26.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (61 kB)
+#9 3.658 Collecting packaging<24,>=16.8 (from streamlit==1.32.0->-r requirements.txt (line 1))
+#9 3.667   Downloading packaging-23.2-py3-none-any.whl.metadata (3.2 kB)
+#9 3.772 Collecting pillow<11,>=7.1.0 (from streamlit==1.32.0->-r requirements.txt (line 1))
+#9 3.783   Downloading pillow-10.4.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (9.2 kB)
+#9 3.874 Collecting protobuf<5,>=3.20 (from streamlit==1.32.0->-r requirements.txt (line 1))
+#9 3.883   Downloading protobuf-4.25.6-cp37-abi3-manylinux2014_x86_64.whl.metadata (541 bytes)
+#9 3.937 Collecting pyarrow>=7.0 (from streamlit==1.32.0->-r requirements.txt (line 1))
+#9 3.945   Downloading pyarrow-19.0.1-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (3.3 kB)
+#9 3.989 Collecting requests<3,>=2.27 (from streamlit==1.32.0->-r requirements.txt (line 1))
+#9 4.016   Downloading requests-2.32.3-py3-none-any.whl.metadata (4.6 kB)
+#9 4.053 Collecting rich<14,>=10.14.0 (from streamlit==1.32.0->-r requirements.txt (line 1))
+#9 4.061   Downloading rich-13.9.4-py3-none-any.whl.metadata (18 kB)
+#9 4.093 Collecting tenacity<9,>=8.1.0 (from streamlit==1.32.0->-r requirements.txt (line 1))
+#9 4.103   Downloading tenacity-8.5.0-py3-none-any.whl.metadata (1.2 kB)
+#9 4.126 Collecting toml<2,>=0.10.1 (from streamlit==1.32.0->-r requirements.txt (line 1))
+#9 4.136   Downloading toml-0.10.2-py2.py3-none-any.whl.metadata (7.1 kB)
+#9 4.191 Collecting typing-extensions<5,>=4.3.0 (from streamlit==1.32.0->-r requirements.txt (line 1))
+#9 4.202   Downloading typing_extensions-4.13.0-py3-none-any.whl.metadata (3.0 kB)
+#9 4.233 Collecting gitpython!=3.1.19,<4,>=3.0.7 (from streamlit==1.32.0->-r requirements.txt (line 1))
+#9 4.247   Downloading GitPython-3.1.44-py3-none-any.whl.metadata (13 kB)
+#9 4.275 Collecting pydeck<1,>=0.8.0b4 (from streamlit==1.32.0->-r requirements.txt (line 1))
+#9 4.284   Downloading pydeck-0.9.1-py2.py3-none-any.whl.metadata (4.1 kB)
+#9 4.320 Collecting tornado<7,>=6.0.3 (from streamlit==1.32.0->-r requirements.txt (line 1))
+#9 4.328   Downloading tornado-6.4.2-cp38-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.5 kB)
+#9 4.377 Collecting watchdog>=2.1.5 (from streamlit==1.32.0->-r requirements.txt (line 1))
+#9 4.387   Downloading watchdog-6.0.0-py3-none-manylinux2014_x86_64.whl.metadata (44 kB)
+#9 4.421 Collecting python-dateutil>=2.8.2 (from pandas->-r requirements.txt (line 2))
+#9 4.430   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+#9 4.473 Collecting pytz>=2020.1 (from pandas->-r requirements.txt (line 2))
+#9 4.485   Downloading pytz-2025.2-py2.py3-none-any.whl.metadata (22 kB)
+#9 4.515 Collecting tzdata>=2022.7 (from pandas->-r requirements.txt (line 2))
+#9 4.523   Downloading tzdata-2025.2-py2.py3-none-any.whl.metadata (1.4 kB)
+#9 4.580 Collecting contourpy>=1.0.1 (from matplotlib->-r requirements.txt (line 5))
+#9 4.587   Downloading contourpy-1.3.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.4 kB)
+#9 4.612 Collecting cycler>=0.10 (from matplotlib->-r requirements.txt (line 5))
+#9 4.632   Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+#9 4.719 Collecting fonttools>=4.22.0 (from matplotlib->-r requirements.txt (line 5))
+#9 4.731   Downloading fonttools-4.56.0-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (101 kB)
+#9 4.788 Collecting kiwisolver>=1.3.1 (from matplotlib->-r requirements.txt (line 5))
+#9 4.795   Downloading kiwisolver-1.4.8-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.2 kB)
+#9 4.838 Collecting pyparsing>=2.3.1 (from matplotlib->-r requirements.txt (line 5))
+#9 4.848   Downloading pyparsing-3.2.3-py3-none-any.whl.metadata (5.0 kB)
+#9 4.880 Collecting entrypoints>=0.4 (from streamlit-extras>=0.2.6->-r requirements.txt (line 6))
+#9 4.890   Downloading entrypoints-0.4-py3-none-any.whl.metadata (2.6 kB)
+#9 4.917 Collecting htbuilder>=0.6.2 (from streamlit-extras>=0.2.6->-r requirements.txt (line 6))
+#9 4.934   Downloading htbuilder-0.9.0.tar.gz (10 kB)
+#9 4.943   Installing build dependencies: started
+#9 6.022   Installing build dependencies: finished with status 'done'
+#9 6.022   Getting requirements to build wheel: started
+#9 6.134   Getting requirements to build wheel: finished with status 'done'
+#9 6.135   Preparing metadata (pyproject.toml): started
+#9 6.231   Preparing metadata (pyproject.toml): finished with status 'done'
+#9 6.251 Collecting markdownlit>=0.0.5 (from streamlit-extras>=0.2.6->-r requirements.txt (line 6))
+#9 6.261   Downloading markdownlit-0.0.7-py3-none-any.whl.metadata (14 kB)
+#9 6.305 Collecting plotly>=1.0.0 (from streamlit-extras>=0.2.6->-r requirements.txt (line 6))
+#9 6.316   Downloading plotly-6.0.1-py3-none-any.whl.metadata (6.7 kB)
+#9 6.343 Collecting prometheus-client>=0.14.0 (from streamlit-extras>=0.2.6->-r requirements.txt (line 6))
+#9 6.354   Downloading prometheus_client-0.21.1-py3-none-any.whl.metadata (1.8 kB)
+#9 6.398 Collecting st-annotated-text>=3.0.0 (from streamlit-extras>=0.2.6->-r requirements.txt (line 6))
+#9 6.410   Downloading st_annotated_text-4.0.2-py3-none-any.whl.metadata (2.4 kB)
+#9 6.438 Collecting st-theme>=1.0.1 (from streamlit-extras>=0.2.6->-r requirements.txt (line 6))
+#9 6.445   Downloading st_theme-1.2.3-py3-none-any.whl.metadata (6.9 kB)
+#9 6.476 Collecting streamlit-avatar>=0.1.3 (from streamlit-extras>=0.2.6->-r requirements.txt (line 6))
+#9 6.485   Downloading streamlit_avatar-0.1.3-py3-none-any.whl.metadata (2.1 kB)
+#9 6.510 Collecting streamlit-camera-input-live>=0.2.0 (from streamlit-extras>=0.2.6->-r requirements.txt (line 6))
+#9 6.518   Downloading streamlit_camera_input_live-0.2.0-py3-none-any.whl.metadata (1.5 kB)
+#9 6.540 Collecting streamlit-card>=0.0.4 (from streamlit-extras>=0.2.6->-r requirements.txt (line 6))
+#9 6.550   Downloading streamlit_card-1.0.2-py3-none-any.whl.metadata (4.0 kB)
+#9 6.576 Collecting streamlit-embedcode>=0.1.2 (from streamlit-extras>=0.2.6->-r requirements.txt (line 6))
+#9 6.586   Downloading streamlit_embedcode-0.1.2-py3-none-any.whl.metadata (414 bytes)
+#9 6.615 Collecting streamlit-faker>=0.0.2 (from streamlit-extras>=0.2.6->-r requirements.txt (line 6))
+#9 6.631   Downloading streamlit_faker-0.0.3-py3-none-any.whl.metadata (2.0 kB)
+#9 6.659 Collecting streamlit-image-coordinates<0.2.0,>=0.1.1 (from streamlit-extras>=0.2.6->-r requirements.txt (line 6))
+#9 6.670   Downloading streamlit_image_coordinates-0.1.9-py3-none-any.whl.metadata (2.0 kB)
+#9 6.696 Collecting streamlit-keyup>=0.1.9 (from streamlit-extras>=0.2.6->-r requirements.txt (line 6))
+#9 6.703   Downloading streamlit_keyup-0.3.0-py3-none-any.whl.metadata (2.0 kB)
+#9 6.727 Collecting streamlit-toggle-switch>=1.0.2 (from streamlit-extras>=0.2.6->-r requirements.txt (line 6))
+#9 6.737   Downloading streamlit_toggle_switch-1.0.2-py3-none-any.whl.metadata (395 bytes)
+#9 6.760 Collecting streamlit-vertical-slider>=2.5.5 (from streamlit-extras>=0.2.6->-r requirements.txt (line 6))
+#9 6.789   Downloading streamlit_vertical_slider-2.5.5-py3-none-any.whl.metadata (2.2 kB)
+#9 6.823 Collecting validators>=0.20.0 (from streamlit-extras>=0.2.6->-r requirements.txt (line 6))
+#9 6.833   Downloading validators-0.34.0-py3-none-any.whl.metadata (3.8 kB)
+#9 6.868 Collecting jinja2 (from altair>=5.0.0->-r requirements.txt (line 8))
+#9 6.878   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+#9 6.915 Collecting jsonschema>=3.0 (from altair>=5.0.0->-r requirements.txt (line 8))
+#9 6.926   Downloading jsonschema-4.23.0-py3-none-any.whl.metadata (7.9 kB)
+#9 6.967 Collecting narwhals>=1.14.2 (from altair>=5.0.0->-r requirements.txt (line 8))
+#9 6.978   Downloading narwhals-1.32.0-py3-none-any.whl.metadata (9.2 kB)
+#9 6.999 INFO: pip is looking at multiple versions of streamlit-option-menu to determine which version is compatible with other requirements. This could take a while.
+#9 6.999 Collecting streamlit-option-menu (from -r requirements.txt (line 9))
+#9 7.011   Downloading streamlit_option_menu-0.3.13-py3-none-any.whl.metadata (2.5 kB)
+#9 7.051 Collecting gitdb<5,>=4.0.1 (from gitpython!=3.1.19,<4,>=3.0.7->streamlit==1.32.0->-r requirements.txt (line 1))
+#9 7.061   Downloading gitdb-4.0.12-py3-none-any.whl.metadata (1.2 kB)
+#9 7.099 Collecting attrs>=22.2.0 (from jsonschema>=3.0->altair>=5.0.0->-r requirements.txt (line 8))
+#9 7.115   Downloading attrs-25.3.0-py3-none-any.whl.metadata (10 kB)
+#9 7.149 Collecting jsonschema-specifications>=2023.03.6 (from jsonschema>=3.0->altair>=5.0.0->-r requirements.txt (line 8))
+#9 7.158   Downloading jsonschema_specifications-2024.10.1-py3-none-any.whl.metadata (3.0 kB)
+#9 7.188 Collecting referencing>=0.28.4 (from jsonschema>=3.0->altair>=5.0.0->-r requirements.txt (line 8))
+#9 7.197   Downloading referencing-0.36.2-py3-none-any.whl.metadata (2.8 kB)
+#9 7.357 Collecting rpds-py>=0.7.1 (from jsonschema>=3.0->altair>=5.0.0->-r requirements.txt (line 8))
+#9 7.371   Downloading rpds_py-0.24.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+#9 7.406 Collecting markdown (from markdownlit>=0.0.5->streamlit-extras>=0.2.6->-r requirements.txt (line 6))
+#9 7.415   Downloading Markdown-3.7-py3-none-any.whl.metadata (7.0 kB)
+#9 7.512 Collecting lxml (from markdownlit>=0.0.5->streamlit-extras>=0.2.6->-r requirements.txt (line 6))
+#9 7.519   Downloading lxml-5.3.1-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (3.7 kB)
+#9 7.545 Collecting favicon (from markdownlit>=0.0.5->streamlit-extras>=0.2.6->-r requirements.txt (line 6))
+#9 7.559   Downloading favicon-0.7.0-py2.py3-none-any.whl.metadata (4.9 kB)
+#9 7.596 Collecting pymdown-extensions (from markdownlit>=0.0.5->streamlit-extras>=0.2.6->-r requirements.txt (line 6))
+#9 7.606   Downloading pymdown_extensions-10.14.3-py3-none-any.whl.metadata (3.0 kB)
+#9 7.666 Collecting MarkupSafe>=2.0 (from jinja2->altair>=5.0.0->-r requirements.txt (line 8))
+#9 7.674   Downloading MarkupSafe-3.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.0 kB)
+#9 7.713 Collecting six>=1.5 (from python-dateutil>=2.8.2->pandas->-r requirements.txt (line 2))
+#9 7.728   Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+#9 7.785 Collecting charset-normalizer<4,>=2 (from requests<3,>=2.27->streamlit==1.32.0->-r requirements.txt (line 1))
+#9 7.796   Downloading charset_normalizer-3.4.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (35 kB)
+#9 7.828 Collecting idna<4,>=2.5 (from requests<3,>=2.27->streamlit==1.32.0->-r requirements.txt (line 1))
+#9 7.894   Downloading idna-3.10-py3-none-any.whl.metadata (10 kB)
+#9 7.936 Collecting urllib3<3,>=1.21.1 (from requests<3,>=2.27->streamlit==1.32.0->-r requirements.txt (line 1))
+#9 7.947   Downloading urllib3-2.3.0-py3-none-any.whl.metadata (6.5 kB)
+#9 7.974 Collecting certifi>=2017.4.17 (from requests<3,>=2.27->streamlit==1.32.0->-r requirements.txt (line 1))
+#9 7.985   Downloading certifi-2025.1.31-py3-none-any.whl.metadata (2.5 kB)
+#9 8.021 Collecting markdown-it-py>=2.2.0 (from rich<14,>=10.14.0->streamlit==1.32.0->-r requirements.txt (line 1))
+#9 8.029   Downloading markdown_it_py-3.0.0-py3-none-any.whl.metadata (6.9 kB)
+#9 8.060 Collecting pygments<3.0.0,>=2.13.0 (from rich<14,>=10.14.0->streamlit==1.32.0->-r requirements.txt (line 1))
+#9 8.071   Downloading pygments-2.19.1-py3-none-any.whl.metadata (2.5 kB)
+#9 8.085 INFO: pip is looking at multiple versions of st-theme to determine which version is compatible with other requirements. This could take a while.
+#9 8.086 Collecting st-theme>=1.0.1 (from streamlit-extras>=0.2.6->-r requirements.txt (line 6))
+#9 8.097   Downloading st_theme-1.2.2-py3-none-any.whl.metadata (5.7 kB)
+#9 8.175 Collecting faker (from streamlit-faker>=0.0.2->streamlit-extras>=0.2.6->-r requirements.txt (line 6))
+#9 8.184   Downloading faker-37.1.0-py3-none-any.whl.metadata (15 kB)
+#9 8.234 Collecting smmap<6,>=3.0.1 (from gitdb<5,>=4.0.1->gitpython!=3.1.19,<4,>=3.0.7->streamlit==1.32.0->-r requirements.txt (line 1))
+#9 8.243   Downloading smmap-5.0.2-py3-none-any.whl.metadata (4.3 kB)
+#9 8.274 Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich<14,>=10.14.0->streamlit==1.32.0->-r requirements.txt (line 1))
+#9 8.284   Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+#9 8.330 Collecting beautifulsoup4>=4.7.0 (from favicon->markdownlit>=0.0.5->streamlit-extras>=0.2.6->-r requirements.txt (line 6))
+#9 8.349   Downloading beautifulsoup4-4.13.3-py3-none-any.whl.metadata (3.8 kB)
+#9 8.400 Collecting pyyaml (from pymdown-extensions->markdownlit>=0.0.5->streamlit-extras>=0.2.6->-r requirements.txt (line 6))
+#9 8.410   Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+#9 8.438 Collecting soupsieve>1.2 (from beautifulsoup4>=4.7.0->favicon->markdownlit>=0.0.5->streamlit-extras>=0.2.6->-r requirements.txt (line 6))
+#9 8.444   Downloading soupsieve-2.6-py3-none-any.whl.metadata (4.6 kB)
+#9 8.480 Downloading streamlit-1.32.0-py2.py3-none-any.whl (8.1 MB)
+#9 9.072    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.1/8.1 MB 13.7 MB/s eta 0:00:00
+#9 9.086 Downloading pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.7 MB)
+#9 9.828    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.7/12.7 MB 17.0 MB/s eta 0:00:00
+#9 9.853 Downloading seaborn-0.13.2-py3-none-any.whl (294 kB)
+#9 9.897 Downloading numpy-1.26.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (18.0 MB)
+#9 11.82    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 18.0/18.0 MB 9.3 MB/s eta 0:00:00
+#9 11.83 Downloading matplotlib-3.10.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (8.6 MB)
+#9 18.45    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.6/8.6 MB 1.3 MB/s eta 0:00:00
+#9 18.46 Downloading streamlit_extras-0.6.0-py3-none-any.whl (85 kB)
+#9 18.65 Downloading streamlit_elements-0.1.0-py3-none-any.whl (7.8 MB)
+#9 22.99    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.8/7.8 MB 2.0 MB/s eta 0:00:00
+#9 23.02 Downloading altair-5.5.0-py3-none-any.whl (731 kB)
+#9 23.24    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 731.2/731.2 kB 3.3 MB/s eta 0:00:00
+#9 23.27 Downloading streamlit_option_menu-0.3.13-py3-none-any.whl (823 kB)
+#9 23.51    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 823.4/823.4 kB 3.3 MB/s eta 0:00:00
+#9 23.55 Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+#9 23.59 Downloading cachetools-5.5.2-py3-none-any.whl (10 kB)
+#9 23.63 Downloading click-8.1.8-py3-none-any.whl (98 kB)
+#9 23.69 Downloading contourpy-1.3.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (323 kB)
+#9 23.82 Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+#9 23.86 Downloading entrypoints-0.4-py3-none-any.whl (5.3 kB)
+#9 23.90 Downloading fonttools-4.56.0-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.9 MB)
+#9 25.32    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.9/4.9 MB 3.4 MB/s eta 0:00:00
+#9 25.36 Downloading GitPython-3.1.44-py3-none-any.whl (207 kB)
+#9 25.45 Downloading jsonschema-4.23.0-py3-none-any.whl (88 kB)
+#9 25.50 Downloading kiwisolver-1.4.8-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.5 MB)
+#9 25.88    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 3.7 MB/s eta 0:00:00
+#9 25.92 Downloading markdownlit-0.0.7-py3-none-any.whl (15 kB)
+#9 25.96 Downloading narwhals-1.32.0-py3-none-any.whl (320 kB)
+#9 26.08 Downloading packaging-23.2-py3-none-any.whl (53 kB)
+#9 26.13 Downloading pillow-10.4.0-cp312-cp312-manylinux_2_28_x86_64.whl (4.5 MB)
+#9 27.18    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 4.3 MB/s eta 0:00:00
+#9 27.22 Downloading plotly-6.0.1-py3-none-any.whl (14.8 MB)
+#9 28.82    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.8/14.8 MB 9.4 MB/s eta 0:00:00
+#9 28.83 Downloading prometheus_client-0.21.1-py3-none-any.whl (54 kB)
+#9 28.84 Downloading protobuf-4.25.6-cp37-abi3-manylinux2014_x86_64.whl (294 kB)
+#9 28.88 Downloading pyarrow-19.0.1-cp312-cp312-manylinux_2_28_x86_64.whl (42.1 MB)
+#9 31.56    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.1/42.1 MB 15.7 MB/s eta 0:00:00
+#9 31.57 Downloading pydeck-0.9.1-py2.py3-none-any.whl (6.9 MB)
+#9 31.94    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.9/6.9 MB 18.9 MB/s eta 0:00:00
+#9 31.95 Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+#9 31.97 Downloading pyparsing-3.2.3-py3-none-any.whl (111 kB)
+#9 31.99 Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+#9 32.02 Downloading pytz-2025.2-py2.py3-none-any.whl (509 kB)
+#9 32.06 Downloading requests-2.32.3-py3-none-any.whl (64 kB)
+#9 32.07 Downloading rich-13.9.4-py3-none-any.whl (242 kB)
+#9 32.09 Downloading st_annotated_text-4.0.2-py3-none-any.whl (9.1 kB)
+#9 32.12 Downloading st_theme-1.2.2-py3-none-any.whl (74 kB)
+#9 32.13 Downloading streamlit_avatar-0.1.3-py3-none-any.whl (779 kB)
+#9 32.18    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 779.6/779.6 kB 15.8 MB/s eta 0:00:00
+#9 32.19 Downloading streamlit_camera_input_live-0.2.0-py3-none-any.whl (6.6 kB)
+#9 32.21 Downloading streamlit_card-1.0.2-py3-none-any.whl (680 kB)
+#9 32.25    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 680.8/680.8 kB 17.1 MB/s eta 0:00:00
+#9 32.26 Downloading streamlit_embedcode-0.1.2-py3-none-any.whl (3.5 kB)
+#9 32.28 Downloading streamlit_faker-0.0.3-py3-none-any.whl (14 kB)
+#9 32.31 Downloading streamlit_image_coordinates-0.1.9-py3-none-any.whl (7.0 kB)
+#9 32.33 Downloading streamlit_keyup-0.3.0-py3-none-any.whl (7.5 kB)
+#9 32.34 Downloading streamlit_toggle_switch-1.0.2-py3-none-any.whl (635 kB)
+#9 32.37    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 635.4/635.4 kB 21.5 MB/s eta 0:00:00
+#9 32.39 Downloading streamlit_vertical_slider-2.5.5-py3-none-any.whl (1.8 MB)
+#9 32.51    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 17.7 MB/s eta 0:00:00
+#9 32.51 Downloading tenacity-8.5.0-py3-none-any.whl (28 kB)
+#9 32.53 Downloading toml-0.10.2-py2.py3-none-any.whl (16 kB)
+#9 32.55 Downloading tornado-6.4.2-cp38-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (437 kB)
+#9 32.59 Downloading typing_extensions-4.13.0-py3-none-any.whl (45 kB)
+#9 32.61 Downloading tzdata-2025.2-py2.py3-none-any.whl (347 kB)
+#9 32.64 Downloading validators-0.34.0-py3-none-any.whl (43 kB)
+#9 32.65 Downloading watchdog-6.0.0-py3-none-manylinux2014_x86_64.whl (79 kB)
+#9 32.67 Downloading attrs-25.3.0-py3-none-any.whl (63 kB)
+#9 32.68 Downloading certifi-2025.1.31-py3-none-any.whl (166 kB)
+#9 32.71 Downloading charset_normalizer-3.4.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (145 kB)
+#9 32.73 Downloading gitdb-4.0.12-py3-none-any.whl (62 kB)
+#9 32.75 Downloading idna-3.10-py3-none-any.whl (70 kB)
+#9 32.77 Downloading jsonschema_specifications-2024.10.1-py3-none-any.whl (18 kB)
+#9 32.79 Downloading markdown_it_py-3.0.0-py3-none-any.whl (87 kB)
+#9 32.80 Downloading MarkupSafe-3.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (23 kB)
+#9 32.82 Downloading pygments-2.19.1-py3-none-any.whl (1.2 MB)
+#9 32.95    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 8.5 MB/s eta 0:00:00
+#9 32.96 Downloading referencing-0.36.2-py3-none-any.whl (26 kB)
+#9 32.98 Downloading rpds_py-0.24.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (393 kB)
+#9 33.02 Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+#9 33.05 Downloading urllib3-2.3.0-py3-none-any.whl (128 kB)
+#9 33.08 Downloading faker-37.1.0-py3-none-any.whl (1.9 MB)
+#9 33.21    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 16.3 MB/s eta 0:00:00
+#9 33.23 Downloading favicon-0.7.0-py2.py3-none-any.whl (5.9 kB)
+#9 33.24 Downloading lxml-5.3.1-cp312-cp312-manylinux_2_28_x86_64.whl (5.0 MB)
+#9 33.48    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.0/5.0 MB 21.2 MB/s eta 0:00:00
+#9 33.49 Downloading Markdown-3.7-py3-none-any.whl (106 kB)
+#9 33.52 Downloading pymdown_extensions-10.14.3-py3-none-any.whl (264 kB)
+#9 33.55 Downloading beautifulsoup4-4.13.3-py3-none-any.whl (186 kB)
+#9 33.57 Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+#9 33.58 Downloading smmap-5.0.2-py3-none-any.whl (24 kB)
+#9 33.60 Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (767 kB)
+#9 33.64    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 767.5/767.5 kB 17.2 MB/s eta 0:00:00
+#9 33.67 Downloading soupsieve-2.6-py3-none-any.whl (36 kB)
+#9 33.87 Building wheels for collected packages: htbuilder
+#9 33.87   Building wheel for htbuilder (pyproject.toml): started
+#9 33.98   Building wheel for htbuilder (pyproject.toml): finished with status 'done'
+#9 33.98   Created wheel for htbuilder: filename=htbuilder-0.9.0-py3-none-any.whl size=12870 sha256=c858d2d6a16d6df010cfc017d156b0c637aed4eca9f7aa71409a3b697fe09e93
+#9 33.98   Stored in directory: /root/.cache/pip/wheels/e3/4e/ff/760211ab527c50cca237ac2c2458fc7614a7d15624cdceb537
+#9 33.98 Successfully built htbuilder
+#9 34.12 Installing collected packages: pytz, watchdog, validators, urllib3, tzdata, typing-extensions, tornado, toml, tenacity, soupsieve, smmap, six, rpds-py, pyyaml, pyparsing, pygments, pyarrow, protobuf, prometheus-client, pillow, packaging, numpy, narwhals, mdurl, MarkupSafe, markdown, lxml, kiwisolver, idna, htbuilder, fonttools, entrypoints, cycler, click, charset-normalizer, certifi, cachetools, blinker, attrs, st-annotated-text, requests, referencing, python-dateutil, pymdown-extensions, plotly, markdown-it-py, jinja2, gitdb, faker, contourpy, beautifulsoup4, rich, pydeck, pandas, matplotlib, jsonschema-specifications, gitpython, favicon, seaborn, jsonschema, altair, streamlit, streamlit-vertical-slider, streamlit-toggle-switch, streamlit-option-menu, streamlit-keyup, streamlit-image-coordinates, streamlit-embedcode, streamlit-elements, streamlit-card, streamlit-camera-input-live, streamlit-avatar, st-theme, streamlit-faker, markdownlit, streamlit-extras
+#9 49.45 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#9 49.45 Successfully installed MarkupSafe-3.0.2 altair-5.5.0 attrs-25.3.0 beautifulsoup4-4.13.3 blinker-1.9.0 cachetools-5.5.2 certifi-2025.1.31 charset-normalizer-3.4.1 click-8.1.8 contourpy-1.3.1 cycler-0.12.1 entrypoints-0.4 faker-37.1.0 favicon-0.7.0 fonttools-4.56.0 gitdb-4.0.12 gitpython-3.1.44 htbuilder-0.9.0 idna-3.10 jinja2-3.1.6 jsonschema-4.23.0 jsonschema-specifications-2024.10.1 kiwisolver-1.4.8 lxml-5.3.1 markdown-3.7 markdown-it-py-3.0.0 markdownlit-0.0.7 matplotlib-3.10.1 mdurl-0.1.2 narwhals-1.32.0 numpy-1.26.4 packaging-23.2 pandas-2.2.3 pillow-10.4.0 plotly-6.0.1 prometheus-client-0.21.1 protobuf-4.25.6 pyarrow-19.0.1 pydeck-0.9.1 pygments-2.19.1 pymdown-extensions-10.14.3 pyparsing-3.2.3 python-dateutil-2.9.0.post0 pytz-2025.2 pyyaml-6.0.2 referencing-0.36.2 requests-2.32.3 rich-13.9.4 rpds-py-0.24.0 seaborn-0.13.2 six-1.17.0 smmap-5.0.2 soupsieve-2.6 st-annotated-text-4.0.2 st-theme-1.2.2 streamlit-1.32.0 streamlit-avatar-0.1.3 streamlit-camera-input-live-0.2.0 streamlit-card-1.0.2 streamlit-elements-0.1.0 streamlit-embedcode-0.1.2 streamlit-extras-0.6.0 streamlit-faker-0.0.3 streamlit-image-coordinates-0.1.9 streamlit-keyup-0.3.0 streamlit-option-menu-0.3.13 streamlit-toggle-switch-1.0.2 streamlit-vertical-slider-2.5.5 tenacity-8.5.0 toml-0.10.2 tornado-6.4.2 typing-extensions-4.13.0 tzdata-2025.2 urllib3-2.3.0 validators-0.34.0 watchdog-6.0.0
+#9 DONE 50.0s
+
+#10 [analise-roas 6/6] COPY app/ ./app/
+#10 DONE 0.0s
+
+#11 [analise-roas] exporting to image
+#11 exporting layers
+#11 exporting layers 3.1s done
+#11 writing image sha256:7b162e29240c68abf8e369d2c889a70ab09d04f3bbaf27772b5914cbd2b8eb34 done
+#11 naming to docker.io/library/dashboard-performance-analise-roas done
+#11 DONE 3.1s
+
+#12 [analise-roas] resolving provenance for metadata file
+#12 DONE 0.0s
+ analise-roas  Built
+ Network dashboard-performance_default  Creating
+ Network dashboard-performance_default  Created
+ Container analise-roas  Creating
+ Container analise-roas  Created
+Attaching to analise-roas
+analise-roas  | 
+analise-roas  | Collecting usage statistics. To deactivate, set browser.gatherUsageStats to False.
+analise-roas  | 
+analise-roas  | 
+analise-roas  |   You can now view your Streamlit app in your browser.
+analise-roas  | 
+analise-roas  |   URL: http://0.0.0.0:8501
+analise-roas  | 
+analise-roas  |   Stopping...
+[Kanalise-roas exited with code 0

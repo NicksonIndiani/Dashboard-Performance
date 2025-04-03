@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   analise-roas:
-    container_name: analise-roas
+    container_name: analise-roas-2
     build: .
     ports:
       - "8501:8501"

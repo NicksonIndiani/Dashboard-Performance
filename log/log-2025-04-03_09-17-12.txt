@@ -1,0 +1,66 @@
+time="2025-04-03T09:17:12-03:00" level=warning msg="/home/nickson/Dashboard-Performance/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+Compose can now delegate builds to bake for better performance.
+ To do so, set COMPOSE_BAKE=true.
+#0 building with "default" instance using docker driver
+
+#1 [analise-roas internal] load build definition from Dockerfile
+#1 transferring dockerfile: 600B done
+#1 DONE 0.0s
+
+#2 [analise-roas internal] load metadata for docker.io/library/python:3.12-slim
+#2 DONE 1.8s
+
+#3 [analise-roas internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [analise-roas 1/6] FROM docker.io/library/python:3.12-slim@sha256:a866731a6b71c4a194a845d86e06568725e430ed21821d0c52e4efb385cf6c6f
+#4 DONE 0.0s
+
+#5 [analise-roas internal] load build context
+#5 transferring context: 93B done
+#5 DONE 0.0s
+
+#6 [analise-roas 2/6] RUN apt-get update && apt-get install -y     build-essential     libglib2.0-0     libsm6     libxext6     libxrender-dev     libfontconfig1     && rm -rf /var/lib/apt/lists/*
+#6 CACHED
+
+#7 [analise-roas 3/6] WORKDIR /app
+#7 CACHED
+
+#8 [analise-roas 4/6] COPY requirements.txt .
+#8 CACHED
+
+#9 [analise-roas 5/6] RUN pip install --upgrade pip && pip install -r requirements.txt
+#9 CACHED
+
+#10 [analise-roas 6/6] COPY app/ ./app/
+#10 CACHED
+
+#11 [analise-roas] exporting to image
+#11 exporting layers done
+#11 writing image sha256:9addb6e7e57a5db9bce30441d9852da05c42e626f56a7744f725fc6f697c90fe done
+#11 naming to docker.io/library/dashboard-performance-analise-roas done
+#11 DONE 0.0s
+
+#12 [analise-roas] resolving provenance for metadata file
+#12 DONE 0.0s
+ analise-roas  Built
+ Network dashboard-performance_default  Creating
+ Network dashboard-performance_default  Created
+ Container analise-roas-2  Creating
+ Container analise-roas-2  Created
+Attaching to analise-roas-2
+analise-roas-2  | 
+analise-roas-2  | Collecting usage statistics. To deactivate, set browser.gatherUsageStats to False.
+analise-roas-2  | 
+analise-roas-2  | 
+analise-roas-2  |   You can now view your Streamlit app in your browser.
+analise-roas-2  | 
+analise-roas-2  |   URL: http://0.0.0.0:8501
+analise-roas-2  | 
+analise-roas-2  | /app/app/main.py:130: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas-2  |   crescimento_roas_pct = crescimento_roas_absoluto.pct_change().fillna(0) * 100  # Converter para %
+analise-roas-2  | /app/app/main.py:183: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+analise-roas-2  |   crescimento_percentual = crescimento_roas_absoluto.pct_change().fillna(0).values
+analise-roas-2  | /app/app/main.py:257: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+analise-roas-2  |   roas_por_faixa = df_unificado.groupby("Faixa de Investimento")["ROAS"].agg(['mean', 'count']).reset_index()

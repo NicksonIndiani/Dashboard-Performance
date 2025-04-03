@@ -9,7 +9,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import altair as alt
 from streamlit_extras.colored_header import colored_header
-from streamlit_option_menu import option_menu
 from streamlit_extras.let_it_rain import rain
 
 
@@ -29,18 +28,23 @@ colored_header(
     description="Análise interativa da performance real e preditiva das campanhas, com simulações, projeções e detecção de outliers.",
     color_name="blue-70"
 )
-
 # Efeito inicial sutil (pode comentar depois de impressionar 😄)
 rain(emoji="💡", font_size=18, falling_speed=5, animation_length="short")
 
+
 with st.sidebar:
-    st.markdown("### 📁 Upload dos Arquivos")
+    st.image("image/avatar-01.svg", width=100)  # Ajuste a largura conforme necessário
+
+
+    
+    
+with st.sidebar:    
     with st.container(border=True):
-        st.markdown("#### 🟦 Envie o arquivo ROAS")
+        st.markdown("##### 🟦 Envie o arquivo ROAS")
         roas_file = st.file_uploader("📤 Arraste ou selecione o arquivo ROAS (.csv)", type=["csv"], key="roas_upload")
 
     with st.container(border=True):
-        st.markdown("#### 🟨 Envie o arquivo Preditivo")
+        st.markdown("##### 🟨 Envie o arquivo Preditivo")
         preditivo_file = st.file_uploader("📤 Arraste ou selecione o arquivo Preditivo (.csv)", type=["csv"], key="preditivo_upload")
 
 if roas_file and preditivo_file:
@@ -78,7 +82,7 @@ if roas_file and preditivo_file:
     df_unificado['ROAS'] = df_unificado['Receita'] / df_unificado['Custo']
 
     with st.sidebar:
-        st.markdown("### 📅 Filtro de Data")
+        st.markdown("## 📅 Filtro de Data")
         data_min = df_unificado['Data Início'].min()
         data_max = df_unificado['Data Início'].max()
         data_range = st.date_input("Selecione o período:", [data_min, data_max], format="DD/MM/YYYY")
@@ -88,7 +92,7 @@ if roas_file and preditivo_file:
                                      (df_unificado['Data Início'] <= pd.to_datetime(data_range[1]))]
 
     with st.sidebar:
-        st.markdown("### 🎯 Simulação Ao Vivo")
+        st.markdown("## 🎯 Simulação Ao Vivo")
         semanas_restantes = st.slider("Semanas Restantes até 11", min_value=1, max_value=11, value=6)
         fase_simulada = st.selectbox("Fase da simulação", ['Alta', 'Queda'])
 
@@ -106,8 +110,8 @@ if roas_file and preditivo_file:
 
     roas_minimo_hoje = calcular_roas_minimo_para_meta(1.34, crescimento_selecionado)
 
-    st.subheader("🎯 Simulação ao Vivo")
-    st.metric("ROAS Mínimo Ideal Hoje", f"{roas_minimo_hoje:.2f}")
+    with st.sidebar:
+        st.metric("ROAS Mínimo Ideal Hoje", f"{roas_minimo_hoje:.2f}")
 
 
 
@@ -233,7 +237,7 @@ if roas_file and preditivo_file:
 
     col1, _ = st.columns(2)
     with col1:
-        st.metric(label="🎯 Valor Inicial Ideal", value=f"{valor_ideal_exato:.4f}", delta="Meta final: 1,34")
+        st.metric(label="🎯 Valor Inicial Ideal", value=f"{valor_ideal_exato:.2f}", delta="Meta final: 1,34")
 
     st.altair_chart(chart, use_container_width=True)
 
